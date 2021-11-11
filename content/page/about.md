@@ -1,16 +1,13 @@
 ---
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
+subtitle: 為什麼會對這老傢伙有興趣…
 comments: false
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+這傢伙有下列特質:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- Lazy ！！！
+- 常常走神，特別的腦慘…
 
-What else do you need?
+WTF?
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
