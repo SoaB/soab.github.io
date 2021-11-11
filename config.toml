@@ -3,16 +3,16 @@ languageCode = "zh_TW"
 title = "SoaB"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
-pygmentsStyle = "trac"
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
+#pygmentsStyle = "trac"
+#pygmentsUseClasses = true
+#pygmentsCodeFences = true
+#pygmentsCodefencesGuessSyntax = true
 
 [Params]
-  homeTitle = "札記" # Set a different text for the header on the home page
+  homeTitle = "札記" 
   subtitle = "爛筆頭幹掉好記性"
   mainSections = ["post","posts"]
-  logo = "img/avatar-icon.png" # Expecting square dimensions
+  logo = "img/avatar-icon.png" 
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
@@ -75,7 +75,7 @@ pygmentsCodefencesGuessSyntax = true
 [[menu.main]]
     name = "About"
     url = "page/about/"
-    weight = 3
+    weight = 2
 
 [[menu.main]]
     name = "Tags"
