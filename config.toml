@@ -1,6 +1,6 @@
-baseurl = ""
+baseurl = "soab.github.io"
 languageCode = "zh_TW"
-title = "Beautiful Hugo"
+title = "SoaB"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
 pygmentsStyle = "trac"
@@ -9,8 +9,8 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [Params]
-  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
-  subtitle = "Build a beautiful and simple website in minutes"
+  homeTitle = "札記" # Set a different text for the header on the home page
+  subtitle = "爛筆頭幹掉好記性"
   mainSections = ["post","posts"]
   logo = "img/avatar-icon.png" # Expecting square dimensions
   favicon = "img/favicon.ico"
@@ -39,7 +39,7 @@ pygmentsCodefencesGuessSyntax = true
 
 [Author]
   name = "SoaB"
-  website = ""
+  website = "soab.github.io"
   email = "cougar.wu@gmail.com"
 #  facebook = "username"
   github = "SoaB"
