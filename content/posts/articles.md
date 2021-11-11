@@ -1,0 +1,8 @@
+---
+title: "遺忘之前"
+layout: archives
+hidden: true
+type: posts
+summary: 歷年文章
+url: /archives/
+---
