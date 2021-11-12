@@ -1,7 +1,7 @@
 ---
 title: "性光識光"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:21:00+08:00
 subtitle: ""
 image: ""

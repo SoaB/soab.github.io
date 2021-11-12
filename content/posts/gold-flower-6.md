@@ -1,7 +1,7 @@
 ---
 title: "回光證驗"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:18:58+08:00
 subtitle: ""
 image: ""

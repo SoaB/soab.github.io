@@ -1,7 +1,7 @@
 ---
 title: "周天"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:21:07+08:00
 subtitle: ""
 image: ""

@@ -1,7 +1,7 @@
 ---
 title: "回光差謬"
-author: ""
-type: ""
+author: "SoaB"
+type: "post"
 date: 2021-11-12T18:16:32+08:00
 subtitle: ""
 image: ""

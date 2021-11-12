@@ -1,7 +1,7 @@
 ---
 title: "天心"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-11T23:10:40+08:00
 subtitle: ""
 image: ""

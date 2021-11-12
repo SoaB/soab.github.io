@@ -1,7 +1,7 @@
 ---
 title: "勸世歌"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:21:09+08:00
 subtitle: ""
 image: ""

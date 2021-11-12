@@ -1,7 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-author: ""
-type: ""
+author: "SoaB"
+type: "post"
+draft: true
 date: {{ .Date }}
 subtitle: ""
 image: ""

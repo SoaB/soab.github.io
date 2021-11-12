@@ -1,6 +1,6 @@
 ---
 title: "元神、識神"
-author: ""
+author: "post"
 type: ""
 date: 2021-11-12T14:08:39+08:00
 subtitle: ""

@@ -1,7 +1,7 @@
 ---
 title: "回光活法"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:19:47+08:00
 subtitle: ""
 image: ""

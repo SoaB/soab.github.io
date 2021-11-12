@@ -1,7 +1,7 @@
 ---
 title: "道遙訣"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:20:38+08:00
 subtitle: ""
 image: ""

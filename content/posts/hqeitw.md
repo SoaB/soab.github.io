@@ -1,7 +1,7 @@
 ---
 title: "回光調息"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:15:00+08:00
 subtitle: ""
 image: ""

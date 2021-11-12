@@ -1,7 +1,7 @@
 ---
 title: "回光守中"
 author: ""
-type: ""
+type: "post"
 date: 2021-11-12T18:13:28+08:00
 subtitle: ""
 image: ""
