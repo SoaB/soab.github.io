@@ -1,4 +1,4 @@
-baseurl = ""
+baseurl = "soab.github.io"
 languageCode = "zh_TW"
 title = "SoaB"
 theme = "beautifulhugo"

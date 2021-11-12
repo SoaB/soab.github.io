@@ -1,5 +1,5 @@
 ---
-title: "遺忘之前"
+title: "歷年文章"
 layout: archives
 hidden: true
 type: posts
