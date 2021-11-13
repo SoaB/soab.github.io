@@ -73,11 +73,16 @@ metaDataFormat = "yaml"
     weight = 1
 
 [[menu.main]]
+    name = "Archives"
+    url = "/archives/"
+    weight = 2
+
+[[menu.main]]
     name = "About"
     url = "page/about/"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 3
+    weight = 4
