@@ -4,19 +4,19 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>Code - R1 - SoaB</title>
-<meta name=description content="Nature of Code 之 0 - intorduction
+<meta name=description content="Nature of Code 之 1 - Vector
 用 Vector 所作的 Mover。">
 <meta name=author content="SoaB"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"SoaB","url":"https:\/\/soab.github.io"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/soab.github.io"}</script>
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/soab.github.io","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/soab.github.io\/posts\/2021-11-21-r1\/","name":"Code r1"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"SoaB"},"headline":"Code - R1","description":"Nature of Code 之 0 - intorduction 用 Vector 所作的 Mover。\n","inLanguage":"en","wordCount":147,"datePublished":"2021-11-21T18:58:29","dateModified":"2021-11-21T18:58:29","image":"https:\/\/soab.github.io\/img\/avatar-icon.png","keywords":["c, program, sgi"],"mainEntityOfPage":"https:\/\/soab.github.io\/posts\/2021-11-21-r1\/","publisher":{"@type":"Organization","name":"https:\/\/soab.github.io","logo":{"@type":"ImageObject","url":"https:\/\/soab.github.io\/img\/avatar-icon.png","height":60,"width":60}}}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/soab.github.io","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/soab.github.io\/posts\/2021-11-21-r1\/","name":"Code r1"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"SoaB"},"headline":"Code - R1","description":"Nature of Code 之 1 - Vector 用 Vector 所作的 Mover。\n","inLanguage":"en","wordCount":201,"datePublished":"2021-11-21T18:58:29","dateModified":"2021-11-21T18:58:29","image":"https:\/\/soab.github.io\/img\/avatar-icon.png","keywords":["c, program, sgi"],"mainEntityOfPage":"https:\/\/soab.github.io\/posts\/2021-11-21-r1\/","publisher":{"@type":"Organization","name":"https:\/\/soab.github.io","logo":{"@type":"ImageObject","url":"https:\/\/soab.github.io\/img\/avatar-icon.png","height":60,"width":60}}}</script>
 <meta property="og:title" content="Code - R1">
-<meta property="og:description" content="Nature of Code 之 0 - intorduction
+<meta property="og:description" content="Nature of Code 之 1 - Vector
 用 Vector 所作的 Mover。">
 <meta property="og:image" content="https://soab.github.io/img/avatar-icon.png">
 <meta property="og:url" content="https://soab.github.io/posts/2021-11-21-r1/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SoaB">
 <meta name=twitter:title content="Code - R1">
-<meta name=twitter:description content="Nature of Code 之 0 - intorduction
+<meta name=twitter:description content="Nature of Code 之 1 - Vector
 用 Vector 所作的 Mover。">
 <meta name=twitter:image content="https://soab.github.io/img/avatar-icon.png">
 <meta name=twitter:card content="summary">
@@ -111,7 +111,7 @@
 <span class=post-meta>
 <i class="fas fa-calendar"></i>&nbsp;Posted on November 21, 2021
 &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;147&nbsp;words
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;201&nbsp;words
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;SoaB
 </span>
 </div>
@@ -124,35 +124,35 @@
 <div class=row>
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <article role=main class=blog-post>
-<p>Nature of Code 之 0 - intorduction
+<p>Nature of Code 之 1 - Vector
 用 Vector 所作的 Mover。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#ifndef __MOVER_H__
 </span><span style=color:#75715e>#define __MOVER_H__
 </span><span style=color:#75715e></span>
 <span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;rnd.h&#34;</span><span style=color:#75715e>
-</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;vector2.h&#34;</span><span style=color:#75715e>
+</span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;v2d.h&#34;</span><span style=color:#75715e>
 </span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdbool.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdint.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt;</span><span style=color:#75715e>
 </span><span style=color:#75715e></span>
 <span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> Mover {
-  Vec2_t location;
-  Vec2_t velocity;
-  Vec2_t acceleration;
+  Vec2D location;
+  Vec2D velocity;
+  Vec2D acceleration;
   <span style=color:#66d9ef>float</span> topSpeed;
-  <span style=color:#66d9ef>void</span> (<span style=color:#f92672>*</span>Update)(<span style=color:#66d9ef>struct</span> Mover <span style=color:#f92672>*</span>self, Vec2_t <span style=color:#f92672>*</span>pt);
+  <span style=color:#66d9ef>void</span> (<span style=color:#f92672>*</span>Update)(<span style=color:#66d9ef>struct</span> Mover <span style=color:#f92672>*</span>self, Vec2D <span style=color:#f92672>*</span>pt);
   <span style=color:#66d9ef>void</span> (<span style=color:#f92672>*</span>Destroy)(<span style=color:#66d9ef>struct</span> Mover <span style=color:#f92672>*</span>self);
+  <span style=color:#66d9ef>void</span> (<span style=color:#f92672>*</span>ChkEdge)(<span style=color:#66d9ef>struct</span> Mover <span style=color:#f92672>*</span>mv, <span style=color:#66d9ef>int</span> w, <span style=color:#66d9ef>int</span> h);
 } Mover;
 
-<span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>_update</span>(Mover <span style=color:#f92672>*</span>mv, Vec2_t <span style=color:#f92672>*</span>pt) {
-  Vec2_t dir <span style=color:#f92672>=</span> Vec2_Subtract(<span style=color:#f92672>*</span>pt, mv<span style=color:#f92672>-&gt;</span>location);
-  dir <span style=color:#f92672>=</span> Vec2_Normalize(dir);
-  dir <span style=color:#f92672>=</span> Vec2_Scale(dir, <span style=color:#ae81ff>0.5</span>);
-  mv<span style=color:#f92672>-&gt;</span>acceleration.x <span style=color:#f92672>=</span> dir.x;
-  mv<span style=color:#f92672>-&gt;</span>acceleration.y <span style=color:#f92672>=</span> dir.y;
-  mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> Vec2_Add(mv<span style=color:#f92672>-&gt;</span>velocity, mv<span style=color:#f92672>-&gt;</span>acceleration);
-  mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> Vec2_Limit(mv<span style=color:#f92672>-&gt;</span>velocity, mv<span style=color:#f92672>-&gt;</span>topSpeed);
-  mv<span style=color:#f92672>-&gt;</span>location <span style=color:#f92672>=</span> Vec2_Add(mv<span style=color:#f92672>-&gt;</span>location, mv<span style=color:#f92672>-&gt;</span>velocity);
+<span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>_update</span>(Mover <span style=color:#f92672>*</span>mv, Vec2D <span style=color:#f92672>*</span>pt) {
+  Vec2D dir <span style=color:#f92672>=</span> V2D_Subtract(<span style=color:#f92672>*</span>pt, mv<span style=color:#f92672>-&gt;</span>location);
+  dir <span style=color:#f92672>=</span> V2D_Normalize(dir);
+  dir <span style=color:#f92672>=</span> V2D_Scale(dir, <span style=color:#ae81ff>.5</span>);
+  mv<span style=color:#f92672>-&gt;</span>acceleration <span style=color:#f92672>=</span> V2D_Clone(dir);
+  mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> V2D_Add(mv<span style=color:#f92672>-&gt;</span>velocity, mv<span style=color:#f92672>-&gt;</span>acceleration);
+  mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> V2D_Limit(mv<span style=color:#f92672>-&gt;</span>velocity, mv<span style=color:#f92672>-&gt;</span>topSpeed);
+  mv<span style=color:#f92672>-&gt;</span>location <span style=color:#f92672>=</span> V2D_Add(mv<span style=color:#f92672>-&gt;</span>location, mv<span style=color:#f92672>-&gt;</span>velocity);
 }
 <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>_destroy</span>(Mover <span style=color:#f92672>*</span>self) {
   <span style=color:#66d9ef>if</span> (self <span style=color:#f92672>!=</span> NULL) {
@@ -160,15 +160,28 @@
     self <span style=color:#f92672>=</span> NULL;
   }
 }
+<span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>_chkEdge</span>(Mover <span style=color:#f92672>*</span>mv, <span style=color:#66d9ef>int</span> w, <span style=color:#66d9ef>int</span> h) {
+  <span style=color:#66d9ef>if</span> ((<span style=color:#66d9ef>int</span>)mv<span style=color:#f92672>-&gt;</span>location.x <span style=color:#f92672>&gt;</span> w) {
+    mv<span style=color:#f92672>-&gt;</span>location.x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> ((<span style=color:#66d9ef>int</span>)mv<span style=color:#f92672>-&gt;</span>location.x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+    mv<span style=color:#f92672>-&gt;</span>location.x <span style=color:#f92672>=</span> w;
+  }
+  <span style=color:#66d9ef>if</span> ((<span style=color:#66d9ef>int</span>)mv<span style=color:#f92672>-&gt;</span>location.y <span style=color:#f92672>&gt;</span> h) {
+    mv<span style=color:#f92672>-&gt;</span>location.y <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> ((<span style=color:#66d9ef>int</span>)mv<span style=color:#f92672>-&gt;</span>location.y <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+    mv<span style=color:#f92672>-&gt;</span>location.y <span style=color:#f92672>=</span> h;
+  }
+}
 Mover <span style=color:#f92672>*</span><span style=color:#a6e22e>NewMover</span>(<span style=color:#66d9ef>int</span> w, <span style=color:#66d9ef>int</span> h) {
   Mover <span style=color:#f92672>*</span>mv <span style=color:#f92672>=</span> (Mover <span style=color:#f92672>*</span>)malloc(<span style=color:#66d9ef>sizeof</span>(Mover));
   <span style=color:#66d9ef>if</span> (mv <span style=color:#f92672>!=</span> NULL) {
-    mv<span style=color:#f92672>-&gt;</span>location <span style=color:#f92672>=</span> (Vec2_t){(<span style=color:#66d9ef>float</span>)rnd_R32n(<span style=color:#ae81ff>0</span>, w), (<span style=color:#66d9ef>float</span>)rnd_R32n(<span style=color:#ae81ff>0</span>, h)};
-    mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> (Vec2_t){<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>};
-    mv<span style=color:#f92672>-&gt;</span>acceleration <span style=color:#f92672>=</span> (Vec2_t){<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>};
+    mv<span style=color:#f92672>-&gt;</span>location <span style=color:#f92672>=</span> V2D_Set((<span style=color:#66d9ef>float</span>)rnd_R32n(<span style=color:#ae81ff>0</span>, w), (<span style=color:#66d9ef>float</span>)rnd_R32n(<span style=color:#ae81ff>0</span>, h));
+    mv<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> V2D_Zero();
+    mv<span style=color:#f92672>-&gt;</span>acceleration <span style=color:#f92672>=</span> V2D_Zero();
     mv<span style=color:#f92672>-&gt;</span>topSpeed <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span>;
     mv<span style=color:#f92672>-&gt;</span>Update <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>_update;
     mv<span style=color:#f92672>-&gt;</span>Destroy <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>_destroy;
+    mv<span style=color:#f92672>-&gt;</span>ChkEdge <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>_chkEdge;
   }
   <span style=color:#66d9ef>return</span> mv;
 }
