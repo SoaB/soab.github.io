@@ -4,7 +4,7 @@
 &lt;li>在8X8的格子裏每天放麥子，第一格1粒，第2格2粒，第3格4粒，每一天都比前一天多一倍的數量，直到64天結束。&lt;/li>
 &lt;/ul>
 &lt;p>這是個等比級數求合的問題。
-Sum = 1+2+2^2+2^3+2^4+&amp;hellip;.+2^63&lt;/p></description></item><item><title>Code - R10</title><link>https://soab.github.io/posts/2022-01-22-r10/</link><pubDate>Sat, 22 Jan 2022 14:18:00 +0800</pubDate><author>cougar.wu@gmail.com (SoaB)</author><guid>https://soab.github.io/posts/2022-01-22-r10/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
+$Sum = 2^0+2^1+2^2+2^3+2^4+&amp;hellip;.+2^{63}$&lt;/p></description></item><item><title>Code - R10</title><link>https://soab.github.io/posts/2022-01-22-r10/</link><pubDate>Sat, 22 Jan 2022 14:18:00 +0800</pubDate><author>cougar.wu@gmail.com (SoaB)</author><guid>https://soab.github.io/posts/2022-01-22-r10/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
 Ch 10 - Neural Networks - Steering Perceptron 的實驗程式。
 使用 &lt;a href="https://ebiten.org/">Ebiten&lt;/a>Library.&lt;/p>
 &lt;p>&lt;img src="images/r10.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R9</title><link>https://soab.github.io/posts/2022-01-19-r9/</link><pubDate>Wed, 19 Jan 2022 22:18:41 +0800</pubDate><author>cougar.wu@gmail.com (SoaB)</author><guid>https://soab.github.io/posts/2022-01-19-r9/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
