@@ -5,7 +5,7 @@
 &lt;p>質數，又稱為素數，是不能被1和本身以外其他整數整除的整數。如：2,3,5,7,11,13,17是前幾固質數，其中2是唯一的偶質數。&lt;/p>
 &lt;h3 id="鳥蘭現象">鳥蘭現象&lt;/h3>
 &lt;p>把質數按照反時針方式排列成螺旋形式，會出現擠成一直線的特性。&lt;/p>
-&lt;p>&lt;img src="images/sperial.gif" alt="O_o">&lt;/p></description></item><item><title>Code - 舍罕王的失算</title><link>https://soab.github.io/posts/2022-03-01/</link><pubDate>Tue, 01 Mar 2022 18:14:03 +0800</pubDate><author>cougar.wu@gmail.com (SoaB)</author><guid>https://soab.github.io/posts/2022-03-01/</guid><description>&lt;h3 id="舍罕王的失算----不可忽視的總合和乘績">舍罕王的失算 &amp;ndash; 不可忽視的總合和乘績&lt;/h3>
+&lt;p>&lt;img src="images/speiral.gif" alt="O_o">&lt;/p></description></item><item><title>Code - 舍罕王的失算</title><link>https://soab.github.io/posts/2022-03-01/</link><pubDate>Tue, 01 Mar 2022 18:14:03 +0800</pubDate><author>cougar.wu@gmail.com (SoaB)</author><guid>https://soab.github.io/posts/2022-03-01/</guid><description>&lt;h3 id="舍罕王的失算----不可忽視的總合和乘績">舍罕王的失算 &amp;ndash; 不可忽視的總合和乘績&lt;/h3>
 &lt;p>（Shirham）舍罕王因為裝B，想給宰相提要求自已要的賞賜。宰相理所當然的就提出了B到天邊的要求：&lt;/p>
 &lt;ul>
 &lt;li>在8X8的格子裏每天放麥子，第一格1粒，第2格2粒，第3格4粒，每一天都比前一天多一倍的數量，直到64天結束。&lt;/li>
