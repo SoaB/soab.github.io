@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vlang on SoaB</title>
+    <link>http://localhost:1313/tags/vlang/</link>
+    <description>Recent content in Vlang on SoaB</description>
+    <generator>Hugo</generator>
+    <language>zh_TW</language>
+    <lastBuildDate>Mon, 27 Dec 2021 15:09:20 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vlang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code - R7</title>
+      <link>http://localhost:1313/posts/2021-12-27-r7/</link>
+      <pubDate>Mon, 27 Dec 2021 15:09:20 +0800</pubDate>
+      <guid>http://localhost:1313/posts/2021-12-27-r7/</guid>
+      <description>&lt;h2 id=&#34;nature-of-code-之-7---ca&#34;&gt;Nature of Code 之 7 - CA&lt;/h2&gt;&#xA;&lt;h3 id=&#34;game-of-life&#34;&gt;Game of Life&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/r7.gif&#34; alt=&#34;O_o&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Code - R6</title>
+      <link>http://localhost:1313/posts/2021-12-14-r6/</link>
+      <pubDate>Tue, 14 Dec 2021 19:28:58 +0800</pubDate>
+      <guid>http://localhost:1313/posts/2021-12-14-r6/</guid>
+      <description>&lt;p&gt;Nature of Code 之 6 - Autonomous Agents&#xA;Vehicle&amp;rsquo;s Wander .&lt;/p&gt;&#xA;&lt;h5 id=&#34;改用vlanghttpsvlangio&#34;&gt;改用&lt;a href=&#34;https://vlang.io/&#34;&gt;VLANG&lt;/a&gt;&lt;/h5&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/r6.gif&#34; alt=&#34;O_o&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,90 @@
+baseurl = "https://soab.github.io"
+languageCode = "zh_TW"
+title = "SoaB"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+#pygmentsStyle = "trac"
+#pygmentsUseClasses = true
+#pygmentsCodeFences = true
+#pygmentsCodefencesGuessSyntax = true
+
+[Params]
+  homeTitle = "札記" 
+  subtitle = "爛筆頭幹掉好記性"
+  mainSections = ["post","posts"]
+#  logo = "img/avatar-icon.png" 
+  logo = "images/avatar.png" 
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  wordCount = true
+#  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+[markup]
+  defaultMarkdownHandler = "Goldmark"
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "SoaB"
+  website = "soab.github.io"
+  email = "cougar.wu@gmail.com"
+#  facebook = "username"
+  github = "SoaB"
+#  gitlab = "username"
+#  bitbucket = "username"
+#  twitter = "username"
+#  reddit = "username"
+#  linkedin = "username"
+#  xing = "username"
+#  stackoverflow = "users/XXXXXXX/username"
+#  snapchat = "username"
+#  instagram = "username"
+#  youtube = "user/username" # or channel/channelname
+#  soundcloud = "username"
+#  spotify = "username"
+#  bandcamp = "username"
+#  itchio = "username"
+#  vk = "username"
+#  paypal = "username"
+#  telegram = "username"
+#  500px = "username"
+#  codepen = "username"
+#  mastodon = "url"
+#  kaggle = "username"
+#  weibo = "username"
+#  slack = "username"
+
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "Archives"
+    url = "/archives/"
+    weight = 2
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 4
