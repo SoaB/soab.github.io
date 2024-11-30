@@ -24,9 +24,9 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-soab-pages@v3
         with:
           github_token: ${{ secrets.webpost }}
-          PUBLISH_BRANCH: gh-pages  # 推送到 gh-pages 分支
+          PUBLISH_BRANCH: soab-pages  # 推送到 soab-pages 分支
           PUBLISH_DIR: ./public     # hugo 生成的目錄
           commit_message: ${{ github.event.head_commit.message }}
