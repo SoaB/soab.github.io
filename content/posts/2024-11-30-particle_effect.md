@@ -1,20 +1,19 @@
 ---
-title: "ParticleEffect"
+title: "Code - Particle_effect"
 author: "SoaB"
 type: "post"
 draft: true
-date: 2024-11-29T18:32:15+08:00
+date: 2024-11-30T12:45:12+08:00
 subtitle: ""
 image: ""
-tags: [zig, raylib]
+tags: [zig, programming]
 ---
 # Particle Effect
 
 Learning Zig programming language ...
 
 Particle effect for learning zig's struct random and raylib implementation ect. 
-
-![O_o](images/screenpar.gif)
+[![o_O](/images/screenpar.gif)](https://github.com/SoaB/soab.github.io)
 <!--more-->
 ```c
 const rl = @cImport({
