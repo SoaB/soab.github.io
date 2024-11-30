@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on SoaB</title><link>https://soab.github.io/tags/go/</link><description>Recent content in Go on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Sat, 22 Jan 2022 14:18:00 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - R10</title><link>https://soab.github.io/posts/2022-01-22-r10/</link><pubDate>Sat, 22 Jan 2022 14:18:00 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-22-r10/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
+Ch 10 - Neural Networks - Steering Perceptron 的實驗程式。
+使用 &lt;a href="https://ebiten.org/">Ebiten&lt;/a>Library.&lt;/p>
+&lt;p>&lt;img src="images/r10.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R9</title><link>https://soab.github.io/posts/2022-01-19-r9/</link><pubDate>Wed, 19 Jan 2022 22:18:41 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-19-r9/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
+Evolution EcoSystem 的實驗程式。
+使用 &lt;a href="https://ebiten.org/">Ebiten&lt;/a>Library.&lt;/p>
+&lt;p>&lt;img src="images/r9.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R8</title><link>https://soab.github.io/posts/2022-01-09-r8/</link><pubDate>Sun, 09 Jan 2022 19:43:05 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-09-r8/</guid><description>&lt;p>Nature of Code 之 8 - Fractals.
+Koch Curve &amp;ndash; KochLine
+&lt;img src="images/r8.gif" alt="O_o">&lt;/p></description></item></channel></rss>
