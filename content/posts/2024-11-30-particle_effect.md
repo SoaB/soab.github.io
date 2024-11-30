@@ -2,11 +2,11 @@
 title: "Code - Particle_effect"
 author: "SoaB"
 type: "post"
-draft: true
+draft: false
 date: 2024-11-30T12:45:12+08:00
 subtitle: ""
 image: ""
-tags: [zig, programming]
+tags: [zig, program]
 ---
 # Particle Effect
 
