@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raylib on SoaB</title><link>https://soab.github.io/tags/raylib/</link><description>Recent content in Raylib on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Fri, 24 Jan 2025 12:45:19 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/raylib/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Line effect</title><link>https://soab.github.io/posts/2025-01-24/</link><pubDate>Fri, 24 Jan 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-01-24/</guid><description>&lt;h1 id="line-effect">Line Effect&lt;/h1>
+&lt;p>Learning Zig programming language &amp;hellip;&lt;/p>
+&lt;p>Line effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
+&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/screenline.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code - Lissajous</title><link>https://soab.github.io/posts/2022-05-02-liss/</link><pubDate>Mon, 02 May 2022 22:43:35 +0800</pubDate><guid>https://soab.github.io/posts/2022-05-02-liss/</guid><description>&lt;h1 id="lissajous-figure">Lissajous figure&lt;/h1>
+&lt;p>數學上，利薩茹曲線是兩個沿著互相垂直方向的正弦振動的合成的軌跡。&lt;/p>
+&lt;p>&lt;img src="images/lissajous.gif" alt="O_o">&lt;/p></description></item><item><title>Code - Speiral</title><link>https://soab.github.io/posts/2022-03-19-speiral/</link><pubDate>Sat, 19 Mar 2022 23:14:38 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-19-speiral/</guid><description>&lt;h1 id="質數">質數&lt;/h1>
+&lt;ul>
+&lt;li>質數是上帝用來描寫宇宙的文字…伽俐略語&lt;/li>
+&lt;/ul>
+&lt;p>質數，又稱為素數，是不能被1和本身以外其他整數整除的整數。如：2,3,5,7,11,13,17是前幾固質數，其中2是唯一的偶質數。&lt;/p>
+&lt;h3 id="鳥蘭現象">鳥蘭現象&lt;/h3>
+&lt;p>把質數按照反時針方式排列成螺旋形式，會出現擠成一直線的特性。&lt;/p>
+&lt;p>&lt;img src="images/speiral.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R8</title><link>https://soab.github.io/posts/2022-01-09-r8/</link><pubDate>Sun, 09 Jan 2022 19:43:05 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-09-r8/</guid><description>&lt;p>Nature of Code 之 8 - Fractals.
+Koch Curve &amp;ndash; KochLine
+&lt;img src="images/r8.gif" alt="O_o">&lt;/p></description></item></channel></rss>

@@ -1,0 +1,109 @@
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Code - R6 - 札記</title>
+<meta name=description content="Nature of Code 之 6 - Autonomous Agents
+Vehicle&rsquo;s Wander .
+改用VLANG
+"><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","name":"SoaB","url":"https:\/\/soab.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Organization","name":"","url":"https:\/\/soab.github.io\/"}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/soab.github.io\/","name":"home"}},{"@type":"ListItem","position":3,"item":{"@id":"https:\/\/soab.github.io\/posts\/2021-12-14-r6\/","name":"Code r6"}}]}</script><script type=application/ld+json>{"@context":"http://schema.org","@type":"Article","author":{"name":"SoaB"},"headline":"Code - R6","description":"Nature of Code 之 6 - Autonomous Agents Vehicle\u0026rsquo;s Wander .\n改用VLANG ","inLanguage":"en","wordCount":251,"datePublished":"2021-12-14T19:28:58\u002b08:00","dateModified":"2021-12-14T19:28:58\u002b08:00","image":"https:\/\/soab.github.io\/images\/avatar.png","keywords":["vlang, program"],"mainEntityOfPage":"https:\/\/soab.github.io\/posts\/2021-12-14-r6\/","publisher":{"@type":"Organization","name":"https:\/\/soab.github.io\/","logo":{"@type":"ImageObject","url":"https:\/\/soab.github.io\/images\/avatar.png","height":60,"width":60}}}</script><meta property="og:title" content="Code - R6"><meta property="og:description" content="Nature of Code 之 6 - Autonomous Agents
+Vehicle&rsquo;s Wander .
+改用VLANG
+"><meta property="og:image" content="https://soab.github.io/images/avatar.png"><meta property="og:url" content="https://soab.github.io/posts/2021-12-14-r6/"><meta property="og:type" content="website"><meta property="og:site_name" content="SoaB"><meta name=twitter:title content="Code - R6"><meta name=twitter:description content="Nature of Code 之 6 - Autonomous Agents
+Vehicle&rsquo;s Wander .
+改用VLANG
+"><meta name=twitter:image content="https://soab.github.io/images/avatar.png"><meta name=twitter:card content="summary_large_image"><link href=https://soab.github.io/img/favicon.ico rel=icon type=image/x-icon><meta name=generator content="Hugo 0.143.1"><link rel=alternate href=https://soab.github.io/index.xml type=application/rss+xml title=SoaB><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css integrity=sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v6.6.0/css/all.css integrity=sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css integrity=sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu crossorigin=anonymous><link rel=stylesheet href=https://soab.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://soab.github.io/css/highlight.min.css><link rel=stylesheet href=https://soab.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+<span class=sr-only>Toggle navigation</span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+<span class=icon-bar></span>
+</button>
+<a class=navbar-brand href=https://soab.github.io/>SoaB</a></div><div class="collapse navbar-collapse" id=main-navbar><ul class="nav navbar-nav navbar-right"><li><a title=Blog href=/>Blog</a></li><li><a title=Archives href=/archives/>Archives</a></li><li><a title=About href=/page/about/>About</a></li><li><a title=Tags href=/tags>Tags</a></li></ul></div><div class=avatar-container><div class=avatar-img-border><a title=SoaB href=https://soab.github.io/><img class=avatar-img src=https://soab.github.io/images/avatar.png alt=SoaB></a></div></div></div></nav><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><header class=header-section><div class="intro-header no-img"><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><div class=post-heading><h1>Code - R6</h1><span class=post-meta><i class="fas fa-calendar"></i>&nbsp;Posted on December 14, 2021
+&nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+&nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;251&nbsp;words
+&nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;SoaB</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><p>Nature of Code 之 6 - Autonomous Agents
+Vehicle&rsquo;s Wander .</p><h5 id=改用vlanghttpsvlangio>改用<a href=https://vlang.io/>VLANG</a></h5><p><img src=images/r6.gif alt=O_o></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-v data-lang=v><span style=display:flex><span><span style=color:#f92672>module</span> sobj
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> vector2 
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> rand
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/*
+</span></span></span><span style=display:flex><span><span style=color:#75715e>Vehcle behavior is seek a target then movie toward it.
+</span></span></span><span style=display:flex><span><span style=color:#75715e>*/</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Vehicle</span> {
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>mut</span>:
+</span></span><span style=display:flex><span>	location     vector2.<span style=color:#a6e22e>Vec2</span>
+</span></span><span style=display:flex><span>	velocity     vector2.<span style=color:#a6e22e>Vec2</span>
+</span></span><span style=display:flex><span>	acceleration vector2.<span style=color:#a6e22e>Vec2</span>
+</span></span><span style=display:flex><span>	r            <span style=color:#66d9ef>f32</span>
+</span></span><span style=display:flex><span>	max_speed    <span style=color:#66d9ef>f32</span>
+</span></span><span style=display:flex><span>	max_force    <span style=color:#66d9ef>f32</span>
+</span></span><span style=display:flex><span>	direction    <span style=color:#66d9ef>f32</span>
+</span></span><span style=display:flex><span>	wander_theta <span style=color:#66d9ef>f32</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>new_vehicle</span>(x <span style=color:#66d9ef>f32</span>, y <span style=color:#66d9ef>f32</span>) <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>Vehicle</span> {
+</span></span><span style=display:flex><span>	vehicle <span style=color:#f92672>:=</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>Vehicle</span>{
+</span></span><span style=display:flex><span>		location: vector2.<span style=color:#a6e22e>Vec2</span>{x, y}
+</span></span><span style=display:flex><span>		velocity: vector2.<span style=color:#a6e22e>Vec2</span>{<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>}
+</span></span><span style=display:flex><span>		acceleration: vector2.<span style=color:#a6e22e>Vec2</span>{<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>}
+</span></span><span style=display:flex><span>		r: <span style=color:#ae81ff>3.0</span>
+</span></span><span style=display:flex><span>		max_speed: <span style=color:#ae81ff>4.0</span>
+</span></span><span style=display:flex><span>		max_force: <span style=color:#ae81ff>0.05</span>
+</span></span><span style=display:flex><span>		direction: <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>		wander_theta:<span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> vehicle
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// update position
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> (<span style=color:#66d9ef>mut</span> v <span style=color:#a6e22e>Vehicle</span>) <span style=color:#a6e22e>update</span>() {
+</span></span><span style=display:flex><span>	head <span style=color:#f92672>:=</span> v.location.clone()
+</span></span><span style=display:flex><span>	v.velocity <span style=color:#f92672>=</span> vector2.<span style=color:#a6e22e>add</span>(v.velocity, v.acceleration)
+</span></span><span style=display:flex><span>	v.velocity.limit(v.max_speed)
+</span></span><span style=display:flex><span>	v.location <span style=color:#f92672>=</span> vector2.<span style=color:#a6e22e>add</span>(v.location,v.velocity)
+</span></span><span style=display:flex><span>	v.acceleration.<span style=color:#a6e22e>zero</span>()
+</span></span><span style=display:flex><span>	v.direction <span style=color:#f92672>=</span> vector2.<span style=color:#a6e22e>angle</span>(head,v.location)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> (<span style=color:#66d9ef>mut</span> v <span style=color:#a6e22e>Vehicle</span>) <span style=color:#a6e22e>wander</span>() {
+</span></span><span style=display:flex><span>	wander_r <span style=color:#f92672>:=</span> f32(<span style=color:#ae81ff>25.0</span>)
+</span></span><span style=display:flex><span>	wander_d <span style=color:#f92672>:=</span> f32(<span style=color:#ae81ff>80.0</span>)
+</span></span><span style=display:flex><span>	change <span style=color:#f92672>:=</span> f32(<span style=color:#ae81ff>0.1</span>)
+</span></span><span style=display:flex><span>	v.wander_theta <span style=color:#f92672>+=</span> rand.<span style=color:#a6e22e>f32_in_range</span>(<span style=color:#f92672>-</span>change, change)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>mut</span> circle_pos <span style=color:#f92672>:=</span> v.velocity.clone()
+</span></span><span style=display:flex><span>	circle_pos.<span style=color:#a6e22e>normalize</span>()
+</span></span><span style=display:flex><span>	circle_pos.<span style=color:#a6e22e>scale</span>(wander_d)
+</span></span><span style=display:flex><span>	circle_pos <span style=color:#f92672>=</span> vector2.<span style=color:#a6e22e>add</span>(circle_pos,v.location)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>mut</span> circle_offset <span style=color:#f92672>:=</span> circle_pos.clone()
+</span></span><span style=display:flex><span>	circle_offset.<span style=color:#a6e22e>rotate</span>(v.wander_theta)
+</span></span><span style=display:flex><span>	circle_offset.<span style=color:#a6e22e>scale</span>(wander_r)
+</span></span><span style=display:flex><span>	target <span style=color:#f92672>:=</span>vector2.<span style=color:#a6e22e>add</span>(circle_pos,circle_offset)
+</span></span><span style=display:flex><span>	v.<span style=color:#a6e22e>seek</span>(target)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span>(<span style=color:#66d9ef>mut</span> v <span style=color:#a6e22e>Vehicle</span>)<span style=color:#a6e22e>border</span>(width <span style=color:#66d9ef>f32</span>,height <span style=color:#66d9ef>f32</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> v.location.x &lt; <span style=color:#f92672>-</span>v.r {v.location.x <span style=color:#f92672>=</span> width <span style=color:#f92672>+</span> v.r}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> v.location.y &lt; <span style=color:#f92672>-</span>v.r {v.location.y <span style=color:#f92672>=</span> height <span style=color:#f92672>+</span> v.r}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> v.location.x &gt; width <span style=color:#f92672>+</span> v.r {v.location.x <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>v.r}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> v.location.y &gt; height <span style=color:#f92672>+</span>v.r {v.location.y <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>v.r}
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> (<span style=color:#66d9ef>mut</span> v <span style=color:#a6e22e>Vehicle</span>) <span style=color:#a6e22e>apply_force</span>(force vector2.<span style=color:#a6e22e>Vec2</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// add mass here if we want  A = F / M
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>	v.acceleration <span style=color:#f92672>=</span>vector2.<span style=color:#a6e22e>add</span>(v.acceleration,force)
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// calculates a steering force rowards a target
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// STEER = DESIRED MINUS VELOCITY
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> (<span style=color:#66d9ef>mut</span> v <span style=color:#a6e22e>Vehicle</span>) <span style=color:#a6e22e>seek</span>(target vector2.<span style=color:#a6e22e>Vec2</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>mut</span> desired <span style=color:#f92672>:=</span>vector2.<span style=color:#a6e22e>sub</span>(target,v.location)
+</span></span><span style=display:flex><span>	desired.<span style=color:#a6e22e>normalize</span>()
+</span></span><span style=display:flex><span>	desired.<span style=color:#a6e22e>scale</span>(v.max_speed)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>mut</span> steer <span style=color:#f92672>:=</span>vector2.<span style=color:#a6e22e>sub</span>(desired,v.velocity)
+</span></span><span style=display:flex><span>	steer.limit(v.max_force)
+</span></span><span style=display:flex><span>	v.<span style=color:#a6e22e>apply_force</span>(steer)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><a href=https://github.com/SoaB/r6>完整的在這裏</a></p><div class=blog-tags><a href=https://soab.github.io/tags/vlang/>vlang</a>&nbsp;
+<a href=https://soab.github.io/tags/program/>program</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f&amp;text=Code%20-%20R6&amp;via=" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f&amp;title=Code%20-%20R6" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f&amp;title=Code%20-%20R6" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f&amp;title=Code%20-%20R6" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fsoab.github.io%2fposts%2f2021-12-14-r6%2f&amp;description=Code%20-%20R6" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/posts/2025-01-24/>Code - Line effect</a></li><li><a href=/posts/2024-11-30-particle_effect/>Code - Particle_effect</a></li><li><a href=/posts/2022-05-02-liss/>Code - Lissajous</a></li><li><a href=/posts/2022-03-19-speiral/>Code - Speiral</a></li><li><a href=/posts/2022-03-01/>Code - 舍罕王的失算</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://soab.github.io/posts/2021-12-02-r4/ data-toggle=tooltip data-placement=top title="Code - R4">&larr; Previous Post</a></li><li class=next><a href=https://soab.github.io/posts/2021-12-27-r7/ data-toggle=tooltip data-placement=top title="Code - R7">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+2025
+&nbsp;&bull;&nbsp;
+<a href=https://soab.github.io/>SoaB</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.143.1</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js integrity=sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script><script src=https://code.jquery.com/jquery-3.7.0.slim.min.js integrity=sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js integrity=sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd crossorigin=anonymous></script><script src=https://soab.github.io/js/main.js></script><script src=https://soab.github.io/js/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script><script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://soab.github.io/js/load-photoswipe.js></script></body></html>
