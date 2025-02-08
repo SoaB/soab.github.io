@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on SoaB</title><link>https://soab.github.io/posts/</link><description>Recent content in Posts on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Fri, 24 Jan 2025 12:45:19 +0800</lastBuildDate><atom:link href="https://soab.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Line effect</title><link>https://soab.github.io/posts/2025-01-24/</link><pubDate>Fri, 24 Jan 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-01-24/</guid><description>&lt;h1 id="line-effect">Line Effect&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on SoaB</title><link>https://soab.github.io/posts/</link><description>Recent content in Posts on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Sat, 08 Feb 2025 12:45:19 +0800</lastBuildDate><atom:link href="https://soab.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Lilikoko - Gemini o_O</title><link>https://soab.github.io/posts/2025-02-08/</link><pubDate>Sat, 08 Feb 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-08/</guid><description>&lt;p>** Gemini 2.0 Flash Thinking Experimental&lt;/p>
+&lt;p>Q:&lt;/p>
+&lt;ul>
+&lt;li>1 = 5 2= 10 3 = 15 4 = 20 那麼5 = ?&lt;/li>
+&lt;/ul>
+&lt;p>顯示思路
+The user is presenting a sequence of numbers on the left side of the equation and their corresponding values on the right side.
+The sequence is:
+1 = 5
+2 = 10
+3 = 15
+4 = 20
+The user is asking to determine the value for 5 = ?.&lt;/p></description></item><item><title>Code - Line effect</title><link>https://soab.github.io/posts/2025-01-24/</link><pubDate>Fri, 24 Jan 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-01-24/</guid><description>&lt;h1 id="line-effect">Line Effect&lt;/h1>
 &lt;p>Learning Zig programming language &amp;hellip;&lt;/p>
 &lt;p>Line effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
 &lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/screenline.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code - Particle_effect</title><link>https://soab.github.io/posts/2024-11-30-particle_effect/</link><pubDate>Sat, 30 Nov 2024 12:45:12 +0800</pubDate><guid>https://soab.github.io/posts/2024-11-30-particle_effect/</guid><description>&lt;h1 id="particle-effect">Particle Effect&lt;/h1>
