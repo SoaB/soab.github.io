@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C on SoaB</title><link>https://soab.github.io/tags/c/</link><description>Recent content in C on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Wed, 12 Mar 2025 12:58:27 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/c/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Lazy Graphics</title><link>https://soab.github.io/posts/2025-03-12/</link><pubDate>Wed, 12 Mar 2025 12:58:27 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-12/</guid><description>&lt;p>為了方便繪圖測試，把sdl 3給加一層包裝，懶人專用…
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sdl3 on SoaB</title><link>https://soab.github.io/tags/sdl3/</link><description>Recent content in Sdl3 on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Wed, 12 Mar 2025 12:58:27 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/sdl3/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Lazy Graphics</title><link>https://soab.github.io/posts/2025-03-12/</link><pubDate>Wed, 12 Mar 2025 12:58:27 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-12/</guid><description>&lt;p>為了方便繪圖測試，把sdl 3給加一層包裝，懶人專用…
 使用例…&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#define LAZY_GRAPHIC_IMPLEMENTATION
@@ -27,26 +27,4 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Fini&lt;/span>();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Code - Pong Game</title><link>https://soab.github.io/posts/2025-02-23/</link><pubDate>Sun, 23 Feb 2025 18:21:14 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-23/</guid><description>&lt;h1 id="a-simple-game-with-raylib">a simple game with raylib&lt;/h1>
-&lt;p>為什麼會有這個東東呢?
-因為想要知道ai的註解是否好用，不想寫註解的人有福了，找ai就對了。&lt;/p></description></item><item><title>Code - Lissajous</title><link>https://soab.github.io/posts/2022-05-02-liss/</link><pubDate>Mon, 02 May 2022 22:43:35 +0800</pubDate><guid>https://soab.github.io/posts/2022-05-02-liss/</guid><description>&lt;h1 id="lissajous-figure">Lissajous figure&lt;/h1>
-&lt;p>數學上，利薩茹曲線是兩個沿著互相垂直方向的正弦振動的合成的軌跡。&lt;/p>
-&lt;p>&lt;img src="images/lissajous.gif" alt="O_o">&lt;/p></description></item><item><title>Code - Speiral</title><link>https://soab.github.io/posts/2022-03-19-speiral/</link><pubDate>Sat, 19 Mar 2022 23:14:38 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-19-speiral/</guid><description>&lt;h1 id="質數">質數&lt;/h1>
-&lt;ul>
-&lt;li>質數是上帝用來描寫宇宙的文字…伽俐略語&lt;/li>
-&lt;/ul>
-&lt;p>質數，又稱為素數，是不能被1和本身以外其他整數整除的整數。如：2,3,5,7,11,13,17是前幾固質數，其中2是唯一的偶質數。&lt;/p>
-&lt;h3 id="鳥蘭現象">鳥蘭現象&lt;/h3>
-&lt;p>把質數按照反時針方式排列成螺旋形式，會出現擠成一直線的特性。&lt;/p>
-&lt;p>&lt;img src="images/speiral.gif" alt="O_o">&lt;/p></description></item><item><title>Code - 舍罕王的失算</title><link>https://soab.github.io/posts/2022-03-01/</link><pubDate>Tue, 01 Mar 2022 18:14:03 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-01/</guid><description>&lt;h3 id="舍罕王的失算--不可忽視的總合和乘績">舍罕王的失算 &amp;ndash; 不可忽視的總合和乘績&lt;/h3>
-&lt;p>（Shirham）舍罕王因為裝B，想給宰相提要求自已要的賞賜。宰相理所當然的就提出了B到天邊的要求：&lt;/p>
-&lt;ul>
-&lt;li>在8X8的格子裏每天放麥子，第一格1粒，第2格2粒，第3格4粒，每一天都比前一天多一倍的數量，直到64天結束。&lt;/li>
-&lt;/ul>
-&lt;p>這是個等比級數求合的問題。
-$Sum = 2^0+2^1+2^2+2^3+2^4+&amp;hellip;.+2^{63}$&lt;/p></description></item><item><title>Code - R4</title><link>https://soab.github.io/posts/2021-12-02-r4/</link><pubDate>Thu, 02 Dec 2021 17:54:06 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-02-r4/</guid><description>&lt;p>Nature of Code 之 4 - Particle.
-Particle System uses list .
-&lt;img src="images/r4.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R3</title><link>https://soab.github.io/posts/2021-11-28-code-r3/</link><pubDate>Sun, 28 Nov 2021 23:12:24 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-28-code-r3/</guid><description>&lt;p>Nature of Code 之 3 - Oscillator .&lt;/p></description></item><item><title>CODE - SGI +</title><link>https://soab.github.io/posts/2021-11-27-sgi_image/</link><pubDate>Sat, 27 Nov 2021 17:07:44 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-27-sgi_image/</guid><description>&lt;p>因為需要所以SGI加入讀取bmp檔作為TEXTURE貼圖用，增加程式：&lt;/p></description></item><item><title>Code - R2</title><link>https://soab.github.io/posts/2021-11-23-r2/</link><pubDate>Tue, 23 Nov 2021 20:58:12 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-23-r2/</guid><description>&lt;p>Nature of Code 之 2 - Force
-用 Vector + Force 所作的 Mover。&lt;/p></description></item><item><title>Code - R1</title><link>https://soab.github.io/posts/2021-11-21-r1/</link><pubDate>Sun, 21 Nov 2021 18:58:29 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-21-r1/</guid><description>&lt;p>Nature of Code 之 1 - Vector
-用 Vector 所作的 Mover。&lt;/p></description></item><item><title>Code - R0</title><link>https://soab.github.io/posts/2021-11-19-code/</link><pubDate>Fri, 19 Nov 2021 19:18:55 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-19-code/</guid><description>&lt;p>Nature of Code 之 0 - intorduction
-用 Perlin noise 所作的walker。&lt;/p></description></item><item><title>Code - 56</title><link>https://soab.github.io/posts/2021-11-12-code/</link><pubDate>Fri, 12 Nov 2021 19:35:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-12-code/</guid><description>&lt;p>A SDL2 Graphics Interface for pure c99.&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
