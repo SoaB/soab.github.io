@@ -24,87 +24,97 @@
 &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;289&nbsp;words
 &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;SoaB</span></div></div></div></div></div></header><div class=container role=main><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><article role=main class=blog-post><h1 id=a-simple-poker-game-with-raylib>a simple POKER game with raylib</h1><p>為什麼會有這個東東呢?
 因為想要知道ai的研究是否好用，順著就寫了一個來測試機率。
-<a href=https://github.com/SoaB/soab.github.io><img src=/images/poker.gif alt=o_O></a></p><p>#include &ldquo;game.h&rdquo; // 引入 game.h 頭文件，其中定義了 Game 結構體和相關常數
-#include &ldquo;card.h&rdquo; // 引入 card.h 頭文件，其中定義了卡牌相關的結構體和函式
-#include &ldquo;gameproc.h&rdquo; // 引入 gameproc.h 頭文件，其中定義了遊戲狀態處理的函式 (例如：DemoProc, BetProc)
-#include &ldquo;gui.h&rdquo; // 引入 gui.h 頭文件，其中定義了 GUI 相關的函式
-#include &ldquo;player.h&rdquo; // 引入 player.h 頭文件，其中定義了玩家相關的結構體和函式
-#include &ldquo;raylib.h&rdquo; // 引入 raylib.h 頭文件，Raylib 繪圖函式庫
-#include &ldquo;timer.h&rdquo; // 引入 timer.h 頭文件，其中定義了計時器相關的函式</p><p>// 初始化遊戲
-void GameInit(Game* game)
-{
-SetWindowState(FLAG_VSYNC_HINT + FLAG_MSAA_4X_HINT);
-SetTraceLogLevel(LOG_ERROR); // 設定 Raylib 的日誌等級為僅顯示錯誤訊息，以減少不必要的輸出
-InitWindow(SCR_W, SCR_H, &ldquo;Poker&rdquo;); // 初始化 Raylib 視窗，設定寬度、高度和標題
-// SetTargetFPS(FPS); // 設定遊戲的目標幀率
-GuiInit(); // 初始化遊戲的 GUI 系統
-CardSetInit(&amp;game->cardSet); // 初始化遊戲的牌組
-CardShuffle(&amp;game->cardSet); // 洗牌
-PlayerInit(&amp;game->player, START_CREDIT); // 初始化玩家，設定初始信用額度
-game->stepCount = 0; // 初始化遊戲步驟計數器為 0
-game->gameMessage = &ldquo;&rdquo;; // 初始化遊戲訊息為空字串
-game->messageTime = 0; // 初始化遊戲訊息顯示計時器為 0
-game->winCountTime = 0; // 初始化贏錢動畫計時器為 0
-game->mainStatus = GAME_DEMO; // 初始化遊戲的主要狀態為 DEMO 狀態 (演示狀態)
-}</p><p>// 結束遊戲時的清理
-void GameFini()
-{
-GuiFini(); // 清理遊戲的 GUI 系統
-CloseWindow(); // 關閉 Raylib 視窗
-}</p><p>// 更新遊戲狀態 (每幀調用)
-void GameUpdate(Game* game)
-{
-UpdateTimer(GetFrameTime()); // 更新遊戲計時器，傳入自上一幀以來經過的時間
-// 根據遊戲的主要狀態執行不同的處理邏輯
-switch (game->mainStatus) {
-case GAME_DEMO: // 遊戲演示狀態
-DemoProc(game); // 調用 DemoProc 函式處理演示狀態的邏輯
-break;
-case GAME_START: // 遊戲開始狀態
-StartProc(game); // 調用 StartProc 函式處理開始狀態的邏輯
-break;
-case GAME_BET: // 遊戲下注狀態
-BetProc(game); // 調用 BetProc 函式處理下注狀態的邏輯
-break;
-case GAME_PLAY: // 遊戲進行狀態
-PlayProc(game); // 調用 PlayProc 函式處理遊戲進行中的邏輯 (例如：發牌、換牌)
-break;
-case GAME_CHECK: // 遊戲檢查輸贏狀態
-CheckProc(game); // 調用 CheckProc 函式處理檢查輸贏的邏輯
-break;
-case GAME_WIN: // 遊戲勝利狀態
-WinProc(game); // 調用 WinProc 函式處理勝利狀態的邏輯 (例如：顯示贏錢動畫)
-break;
-case GAME_LOSE: // 遊戲失敗狀態
-LoseProc(game); // 調用 LoseProc 函式處理失敗狀態的邏輯 (例如：顯示失敗訊息)
-break;
-case GAME_ACCOUNT: // 遊戲結算狀態
-AccountProc(game); // 調用 AccountProc 函式處理結算狀態的邏輯
-break;
-}
-}</p><p>// 繪製遊戲畫面 (每幀調用)
-void GameDraw(Game* game)
-{
-GuiDrawBackground();
-GuiDrawBet(game->player.bet);
-GuiDrawCredit(game->player.credit);
-GuiDrawOdds();
-GUIDrawHeld(game);
-GuiDrawMessage(game->gameMessage);
-GuiDrawPlayerHandCard(game);
-}</p><p>// 遊戲主循環
-void GameLoop(Game* game)
-{
-// 當視窗沒有被要求關閉時持續循環
-while (!WindowShouldClose()) {
-GameUpdate(game); // 更新遊戲狀態
-BeginDrawing(); // 開始繪製當前幀
-ClearBackground(BLACK); // 清除背景為黑色
-GameDraw(game); // 繪製遊戲畫面
-EndDrawing(); // 結束當前幀的繪製
-}
-}
-<a href=https://codeberg.org/SoaB/poker>完整的在這裏</a></p><div class=blog-tags><a href=https://soab.github.io/tags/c/>c</a>&nbsp;
+<a href=https://github.com/SoaB/soab.github.io><img src=/images/poker.gif alt=o_O></a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;game.h&#34; // 引入 game.h 頭文件，其中定義了 Game 結構體和相關常數</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;card.h&#34; // 引入 card.h 頭文件，其中定義了卡牌相關的結構體和函式</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;gameproc.h&#34; // 引入 gameproc.h 頭文件，其中定義了遊戲狀態處理的函式 (例如：DemoProc, BetProc)</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;gui.h&#34; // 引入 gui.h 頭文件，其中定義了 GUI 相關的函式</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;player.h&#34; // 引入 player.h 頭文件，其中定義了玩家相關的結構體和函式</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;raylib.h&#34; // 引入 raylib.h 頭文件，Raylib 繪圖函式庫</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;timer.h&#34; // 引入 timer.h 頭文件，其中定義了計時器相關的函式</span><span style=color:#75715e>
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 初始化遊戲
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>GameInit</span>(Game<span style=color:#f92672>*</span> game)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>SetWindowState</span>(FLAG_VSYNC_HINT <span style=color:#f92672>+</span> FLAG_MSAA_4X_HINT);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>SetTraceLogLevel</span>(LOG_ERROR); <span style=color:#75715e>// 設定 Raylib 的日誌等級為僅顯示錯誤訊息，以減少不必要的輸出
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>InitWindow</span>(SCR_W, SCR_H, <span style=color:#e6db74>&#34;Poker&#34;</span>); <span style=color:#75715e>// 初始化 Raylib 視窗，設定寬度、高度和標題
+</span></span></span><span style=display:flex><span><span style=color:#75715e>//    SetTargetFPS(FPS); // 設定遊戲的目標幀率
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>GuiInit</span>(); <span style=color:#75715e>// 初始化遊戲的 GUI 系統
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>CardSetInit</span>(<span style=color:#f92672>&amp;</span>game<span style=color:#f92672>-&gt;</span>cardSet); <span style=color:#75715e>// 初始化遊戲的牌組
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>CardShuffle</span>(<span style=color:#f92672>&amp;</span>game<span style=color:#f92672>-&gt;</span>cardSet); <span style=color:#75715e>// 洗牌
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>PlayerInit</span>(<span style=color:#f92672>&amp;</span>game<span style=color:#f92672>-&gt;</span>player, START_CREDIT); <span style=color:#75715e>// 初始化玩家，設定初始信用額度
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    game<span style=color:#f92672>-&gt;</span>stepCount <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 初始化遊戲步驟計數器為 0
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    game<span style=color:#f92672>-&gt;</span>gameMessage <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>; <span style=color:#75715e>// 初始化遊戲訊息為空字串
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    game<span style=color:#f92672>-&gt;</span>messageTime <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 初始化遊戲訊息顯示計時器為 0
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    game<span style=color:#f92672>-&gt;</span>winCountTime <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 初始化贏錢動畫計時器為 0
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    game<span style=color:#f92672>-&gt;</span>mainStatus <span style=color:#f92672>=</span> GAME_DEMO; <span style=color:#75715e>// 初始化遊戲的主要狀態為 DEMO 狀態 (演示狀態)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 結束遊戲時的清理
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>GameFini</span>()
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiFini</span>(); <span style=color:#75715e>// 清理遊戲的 GUI 系統
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>CloseWindow</span>(); <span style=color:#75715e>// 關閉 Raylib 視窗
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 更新遊戲狀態 (每幀調用)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>GameUpdate</span>(Game<span style=color:#f92672>*</span> game)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>UpdateTimer</span>(<span style=color:#a6e22e>GetFrameTime</span>()); <span style=color:#75715e>// 更新遊戲計時器，傳入自上一幀以來經過的時間
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 根據遊戲的主要狀態執行不同的處理邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>switch</span> (game<span style=color:#f92672>-&gt;</span>mainStatus) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_DEMO: <span style=color:#75715e>// 遊戲演示狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>DemoProc</span>(game); <span style=color:#75715e>// 調用 DemoProc 函式處理演示狀態的邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_START: <span style=color:#75715e>// 遊戲開始狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>StartProc</span>(game); <span style=color:#75715e>// 調用 StartProc 函式處理開始狀態的邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_BET: <span style=color:#75715e>// 遊戲下注狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>BetProc</span>(game); <span style=color:#75715e>// 調用 BetProc 函式處理下注狀態的邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_PLAY: <span style=color:#75715e>// 遊戲進行狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>PlayProc</span>(game); <span style=color:#75715e>// 調用 PlayProc 函式處理遊戲進行中的邏輯 (例如：發牌、換牌)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_CHECK: <span style=color:#75715e>// 遊戲檢查輸贏狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>CheckProc</span>(game); <span style=color:#75715e>// 調用 CheckProc 函式處理檢查輸贏的邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_WIN:    <span style=color:#75715e>// 遊戲勝利狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>WinProc</span>(game);   <span style=color:#75715e>// 調用 WinProc 函式處理勝利狀態的邏輯 (例如：顯示贏錢動畫)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_LOSE:   <span style=color:#75715e>// 遊戲失敗狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>LoseProc</span>(game);  <span style=color:#75715e>// 調用 LoseProc 函式處理失敗狀態的邏輯 (例如：顯示失敗訊息)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> GAME_ACCOUNT: <span style=color:#75715e>// 遊戲結算狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>AccountProc</span>(game); <span style=color:#75715e>// 調用 AccountProc 函式處理結算狀態的邏輯
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 繪製遊戲畫面 (每幀調用)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>GameDraw</span>(Game<span style=color:#f92672>*</span> game)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawBackground</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawBet</span>(game<span style=color:#f92672>-&gt;</span>player.bet);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawCredit</span>(game<span style=color:#f92672>-&gt;</span>player.credit);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawOdds</span>();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GUIDrawHeld</span>(game);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawMessage</span>(game<span style=color:#f92672>-&gt;</span>gameMessage);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>GuiDrawPlayerHandCard</span>(game); 
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 遊戲主循環
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>GameLoop</span>(Game<span style=color:#f92672>*</span> game)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 當視窗沒有被要求關閉時持續循環
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>while</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>WindowShouldClose</span>()) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>GameUpdate</span>(game); <span style=color:#75715e>// 更新遊戲狀態
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>BeginDrawing</span>();    <span style=color:#75715e>// 開始繪製當前幀
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ClearBackground</span>(BLACK); <span style=color:#75715e>// 清除背景為黑色
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>GameDraw</span>(game);    <span style=color:#75715e>// 繪製遊戲畫面
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>EndDrawing</span>();      <span style=color:#75715e>// 結束當前幀的繪製
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><a href=https://codeberg.org/SoaB/poker>完整的在這裏</a></p><div class=blog-tags><a href=https://soab.github.io/tags/c/>c</a>&nbsp;
 <a href=https://soab.github.io/tags/raylib/>raylib</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f&amp;text=Code%20--%20Simple%20POKER%20Game&amp;via=" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f&amp;title=Code%20--%20Simple%20POKER%20Game" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f&amp;title=Code%20--%20Simple%20POKER%20Game" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f&amp;title=Code%20--%20Simple%20POKER%20Game" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-03-31%2f&amp;description=Code%20--%20Simple%20POKER%20Game" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/posts/2025-03-12/>Code - Lazy Graphics</a></li><li><a href=/posts/2025-02-23/>Code - Pong Game</a></li><li><a href=/posts/2025-01-24/>Code - Line effect</a></li><li><a href=/posts/2022-05-02-liss/>Code - Lissajous</a></li><li><a href=/posts/2022-03-19-speiral/>Code - Speiral</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://soab.github.io/posts/2025-03-30/ data-toggle=tooltip data-placement=top title="Poker game from GEMINI">&larr; Previous Post</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
 2025
 &nbsp;&bull;&nbsp;
