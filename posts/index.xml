@@ -1,127 +1,132 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on SoaB</title><link>https://soab.github.io/posts/</link><description>Recent content in Posts on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Sat, 19 Apr 2025 22:36:01 +0800</lastBuildDate><atom:link href="https://soab.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - ECS ? Particles + arena + Quad Tree</title><link>https://soab.github.io/posts/2025-04-19/</link><pubDate>Sat, 19 Apr 2025 22:36:01 +0800</pubDate><guid>https://soab.github.io/posts/2025-04-19/</guid><description>&lt;h1 id="ecs-arena-quadtree">ECS Arena QuadTree&lt;/h1>
-&lt;p>ECS是𠁭，可以吃嗎?
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on SoaB</title><link>https://soab.github.io/posts/</link><description>Recent content in Posts on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Tue, 13 Jan 2026 14:21:20 +0800</lastBuildDate><atom:link href="https://soab.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Mine Sweeper</title><link>https://soab.github.io/posts/2026-01-13/</link><pubDate>Tue, 13 Jan 2026 14:21:20 +0800</pubDate><guid>https://soab.github.io/posts/2026-01-13/</guid><description>&lt;h1 id="minesweeper-game"&gt;MineSweeper Game&lt;/h1&gt;
+&lt;p&gt;這是一個使用 Raylib 圖形庫開發的經典踩地雷（Minesweeper）遊戲程式。程式以 C 語言撰寫，支援不同的難度等級，並包含音效、圖片資源和自訂字體。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://codeberg.org/SoaB/MineSweeper.git"&gt;源碼在這裏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這個README是由AI依照原始程式產生的，真是方便啊!&amp;mdash; -_- 最討厭寫這些文件了…&lt;/p&gt;</description></item><item><title>Code - ECS ? Particles + arena + Quad Tree</title><link>https://soab.github.io/posts/2025-04-19/</link><pubDate>Sat, 19 Apr 2025 22:36:01 +0800</pubDate><guid>https://soab.github.io/posts/2025-04-19/</guid><description>&lt;h1 id="ecs-arena-quadtree"&gt;ECS Arena QuadTree&lt;/h1&gt;
+&lt;p&gt;ECS是𠁭，可以吃嗎?
 Arena , QuadTree 這東東又有何特別?
-這次用30000個Particles來實驗一下下，有沒有廣告說的這麼強 !!!&lt;/p>
-&lt;p>&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/parqtree.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code - Game Practicum 01</title><link>https://soab.github.io/posts/2025-04-15/</link><pubDate>Tue, 15 Apr 2025 13:12:32 +0800</pubDate><guid>https://soab.github.io/posts/2025-04-15/</guid><description>&lt;h1 id="a-simple-game-practicum-with-raylib">a simple game practicum with raylib&lt;/h1>
-&lt;p>這是一個簡單的使用raylib的遊戲，主要是用來練習raylib的基本功能。
+這次用30000個Particles來實驗一下下，有沒有廣告說的這麼強 !!!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/parqtree.gif" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Code - Game Practicum 01</title><link>https://soab.github.io/posts/2025-04-15/</link><pubDate>Tue, 15 Apr 2025 13:12:32 +0800</pubDate><guid>https://soab.github.io/posts/2025-04-15/</guid><description>&lt;h1 id="a-simple-game-practicum-with-raylib"&gt;a simple game practicum with raylib&lt;/h1&gt;
+&lt;p&gt;這是一個簡單的使用raylib的遊戲，主要是用來練習raylib的基本功能。
 因為是練習用，所脙會非常隨性，你可能會發現程式風格極為混亂!是的，我喜歡混亂，那代表著無限的可能性。
 當然也會有無限的錯誤，請多多包涵。
 為什麼用C語言來練習呢？C代表著最大程度的自由，你可以用任何你喜歡的方式來寫程式。
 What you think. what you write code. NO LIMIT. NO strange RULES.
-&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/slimewar.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code -- Simple POKER Game</title><link>https://soab.github.io/posts/2025-03-31/</link><pubDate>Mon, 31 Mar 2025 09:32:08 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-31/</guid><description>&lt;h1 id="a-simple-poker-game-with-raylib">a simple POKER game with raylib&lt;/h1>
-&lt;p>為什麼會有這個東東呢?
+&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/slimewar.gif" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Code -- Simple POKER Game</title><link>https://soab.github.io/posts/2025-03-31/</link><pubDate>Mon, 31 Mar 2025 09:32:08 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-31/</guid><description>&lt;h1 id="a-simple-poker-game-with-raylib"&gt;a simple POKER game with raylib&lt;/h1&gt;
+&lt;p&gt;為什麼會有這個東東呢?
 因為想要知道ai的研究是否好用，順著就寫了一個來測試機率。
-&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/poker.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Poker game from GEMINI</title><link>https://soab.github.io/posts/2025-03-30/</link><pubDate>Sun, 30 Mar 2025 12:49:58 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-30/</guid><description>&lt;h1 id="撲克牌遊戲中各種牌型的自然機率分析報告">撲克牌遊戲中各種牌型的自然機率分析報告&lt;/h1>
-&lt;p>&lt;strong>1. 前言&lt;/strong>&lt;/p>
-&lt;p>撲克牌遊戲，尤其是五張換手撲克，在全球廣受歡迎。了解遊戲中各種牌型出現的機率對於玩家制定策略至關重要。本報告旨在透過組合數學的方法，計算在一副標準的 52 張撲克牌中，隨機抽取 5 張牌時，形成各種特定牌型的自然機率，這些牌型已由使用者提供的 &lt;code>CardWinKind&lt;/code> 陣列定義。本分析將基於標準的組合學原理，計算每種牌型的組合數量，並將其除以所有可能的五張牌組合總數，從而得出其發生的機率。本報告將詳細闡述每種牌型的計算過程，並總結其機率分佈。&lt;/p></description></item><item><title>Code - Lazy Graphics</title><link>https://soab.github.io/posts/2025-03-12/</link><pubDate>Wed, 12 Mar 2025 12:58:27 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-12/</guid><description>&lt;p>為了方便繪圖測試，把sdl 3給加一層包裝，懶人專用…
-使用例…&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c" data-lang="c">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;stdlib.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#define LAZY_GRAPHIC_IMPLEMENTATION
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;#34;lazygraphic.h&amp;#34;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;math.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;time.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> argc, &lt;span style="color:#66d9ef">char&lt;/span>&lt;span style="color:#f92672">*&lt;/span> argv[])
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RGBA bkgColor &lt;span style="color:#f92672">=&lt;/span> { .color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0xFF181818&lt;/span> };
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> RGBA cirColor &lt;span style="color:#f92672">=&lt;/span> { .color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0xFF18D818&lt;/span> };
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Init&lt;/span>(&lt;span style="color:#ae81ff">800&lt;/span>, &lt;span style="color:#ae81ff">600&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;LAZY !!&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">srand&lt;/span>(&lt;span style="color:#a6e22e">time&lt;/span>(NULL));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>lazyGr.&lt;span style="color:#a6e22e">Done&lt;/span>()) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Clear&lt;/span>(bkgColor);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">50&lt;/span>; i&lt;span style="color:#f92672">++&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> rx &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">rand&lt;/span>() &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#ae81ff">400&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> ry &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">rand&lt;/span>() &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#ae81ff">300&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> rr &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">rand&lt;/span>() &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cirColor.color &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">rand&lt;/span>() &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0xFF000000&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Disk&lt;/span>(&lt;span style="color:#ae81ff">400&lt;/span> &lt;span style="color:#f92672">-&lt;/span> rr&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#f92672">+&lt;/span> rx&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">300&lt;/span> &lt;span style="color:#f92672">-&lt;/span> rr&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#f92672">+&lt;/span> ry&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> , rr, cirColor);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Update&lt;/span>();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Delay&lt;/span>(&lt;span style="color:#ae81ff">16&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lazyGr.&lt;span style="color:#a6e22e">Fini&lt;/span>();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Code - Pong Game</title><link>https://soab.github.io/posts/2025-02-23/</link><pubDate>Sun, 23 Feb 2025 18:21:14 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-23/</guid><description>&lt;h1 id="a-simple-game-with-raylib">a simple game with raylib&lt;/h1>
-&lt;p>為什麼會有這個東東呢?
-因為想要知道ai的註解是否好用，不想寫註解的人有福了，找ai就對了。&lt;/p></description></item><item><title>Lilikoko - Gemini o_O</title><link>https://soab.github.io/posts/2025-02-08/</link><pubDate>Sat, 08 Feb 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-08/</guid><description>&lt;p>** Gemini 2.0 Flash Thinking Experimental&lt;/p>
-&lt;p>Q:&lt;/p>
-&lt;ul>
-&lt;li>1 = 5 2= 10 3 = 15 4 = 20 那麼5 = ?&lt;/li>
-&lt;/ul>
-&lt;p>顯示思路
+&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/poker.gif" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Poker game from GEMINI</title><link>https://soab.github.io/posts/2025-03-30/</link><pubDate>Sun, 30 Mar 2025 12:49:58 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-30/</guid><description>&lt;h1 id="撲克牌遊戲中各種牌型的自然機率分析報告"&gt;撲克牌遊戲中各種牌型的自然機率分析報告&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1. 前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;撲克牌遊戲，尤其是五張換手撲克，在全球廣受歡迎。了解遊戲中各種牌型出現的機率對於玩家制定策略至關重要。本報告旨在透過組合數學的方法，計算在一副標準的 52 張撲克牌中，隨機抽取 5 張牌時，形成各種特定牌型的自然機率，這些牌型已由使用者提供的 &lt;code&gt;CardWinKind&lt;/code&gt; 陣列定義。本分析將基於標準的組合學原理，計算每種牌型的組合數量，並將其除以所有可能的五張牌組合總數，從而得出其發生的機率。本報告將詳細闡述每種牌型的計算過程，並總結其機率分佈。&lt;/p&gt;</description></item><item><title>Code - Lazy Graphics</title><link>https://soab.github.io/posts/2025-03-12/</link><pubDate>Wed, 12 Mar 2025 12:58:27 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-12/</guid><description>&lt;p&gt;為了方便繪圖測試，把sdl 3給加一層包裝，懶人專用…
+使用例…&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#define LAZY_GRAPHIC_IMPLEMENTATION
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;#34;lazygraphic.h&amp;#34;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;math.h&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#include&lt;/span&gt; &lt;span style="color:#75715e"&gt;&amp;lt;time.h&amp;gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; argc, &lt;span style="color:#66d9ef"&gt;char&lt;/span&gt;&lt;span style="color:#f92672"&gt;*&lt;/span&gt; argv[])
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; RGBA bkgColor &lt;span style="color:#f92672"&gt;=&lt;/span&gt; { .color &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0xFF181818&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; RGBA cirColor &lt;span style="color:#f92672"&gt;=&lt;/span&gt; { .color &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0xFF18D818&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Init&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;800&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;600&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;LAZY !!&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;srand&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;time&lt;/span&gt;(NULL));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;while&lt;/span&gt; (&lt;span style="color:#f92672"&gt;!&lt;/span&gt;lazyGr.&lt;span style="color:#a6e22e"&gt;Done&lt;/span&gt;()) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Clear&lt;/span&gt;(bkgColor);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; (&lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; i &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;; i &lt;span style="color:#f92672"&gt;&amp;lt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;50&lt;/span&gt;; i&lt;span style="color:#f92672"&gt;++&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; rx &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rand&lt;/span&gt;() &lt;span style="color:#f92672"&gt;%&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;400&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; ry &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rand&lt;/span&gt;() &lt;span style="color:#f92672"&gt;%&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;300&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;int&lt;/span&gt; rr &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rand&lt;/span&gt;() &lt;span style="color:#f92672"&gt;%&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;200&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; cirColor.color &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;rand&lt;/span&gt;() &lt;span style="color:#f92672"&gt;|&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0xFF000000&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Disk&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;400&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt; rr&lt;span style="color:#f92672"&gt;/&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; rx&lt;span style="color:#f92672"&gt;/&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;, &lt;span style="color:#ae81ff"&gt;300&lt;/span&gt; &lt;span style="color:#f92672"&gt;-&lt;/span&gt; rr&lt;span style="color:#f92672"&gt;/&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; ry&lt;span style="color:#f92672"&gt;/&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;2&lt;/span&gt; , rr, cirColor);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Update&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Delay&lt;/span&gt;(&lt;span style="color:#ae81ff"&gt;16&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; lazyGr.&lt;span style="color:#a6e22e"&gt;Fini&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Code - Pong Game</title><link>https://soab.github.io/posts/2025-02-23/</link><pubDate>Sun, 23 Feb 2025 18:21:14 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-23/</guid><description>&lt;h1 id="a-simple-game-with-raylib"&gt;a simple game with raylib&lt;/h1&gt;
+&lt;p&gt;為什麼會有這個東東呢?
+因為想要知道ai的註解是否好用，不想寫註解的人有福了，找ai就對了。&lt;/p&gt;</description></item><item><title>Lilikoko - Gemini o_O</title><link>https://soab.github.io/posts/2025-02-08/</link><pubDate>Sat, 08 Feb 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-08/</guid><description>&lt;p&gt;** Gemini 2.0 Flash Thinking Experimental&lt;/p&gt;
+&lt;p&gt;Q:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 = 5 2= 10 3 = 15 4 = 20 那麼5 = ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;顯示思路
 The user is presenting a sequence of numbers on the left side of the equation and their corresponding values on the right side.
 The sequence is:
 1 = 5
 2 = 10
 3 = 15
 4 = 20
-The user is asking to determine the value for 5 = ?.&lt;/p></description></item><item><title>Code - Line effect</title><link>https://soab.github.io/posts/2025-01-24/</link><pubDate>Fri, 24 Jan 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-01-24/</guid><description>&lt;h1 id="line-effect">Line Effect&lt;/h1>
-&lt;p>Learning Zig programming language &amp;hellip;&lt;/p>
-&lt;p>Line effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
-&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/screenline.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code - Particle_effect</title><link>https://soab.github.io/posts/2024-11-30-particle_effect/</link><pubDate>Sat, 30 Nov 2024 12:45:12 +0800</pubDate><guid>https://soab.github.io/posts/2024-11-30-particle_effect/</guid><description>&lt;h1 id="particle-effect">Particle Effect&lt;/h1>
-&lt;p>Learning Zig programming language &amp;hellip;&lt;/p>
-&lt;p>Particle effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
-&lt;a href="https://github.com/SoaB/soab.github.io">&lt;img src="https://soab.github.io/images/screenpar.gif" alt="o_O">&lt;/a>&lt;/p></description></item><item><title>Code - Lissajous</title><link>https://soab.github.io/posts/2022-05-02-liss/</link><pubDate>Mon, 02 May 2022 22:43:35 +0800</pubDate><guid>https://soab.github.io/posts/2022-05-02-liss/</guid><description>&lt;h1 id="lissajous-figure">Lissajous figure&lt;/h1>
-&lt;p>數學上，利薩茹曲線是兩個沿著互相垂直方向的正弦振動的合成的軌跡。&lt;/p>
-&lt;p>&lt;img src="images/lissajous.gif" alt="O_o">&lt;/p></description></item><item><title>Casino - Gamblers</title><link>https://soab.github.io/posts/2022-04-04-casino/</link><pubDate>Mon, 04 Apr 2022 16:41:37 +0800</pubDate><guid>https://soab.github.io/posts/2022-04-04-casino/</guid><description>&lt;p>大多數（如果不是全部的話）賭徒都是迷信的。他們有幸運日，幸運的衣服，幸運的數字，無論什麼 - 總是有一個明顯的原因來贏得或失去。因此，第一張圖表的好成績是因為玩家的幸運T恤（它是藍色，他的幸運顏色），但是當他無意中交叉雙腿時，一切都出了問題。此外，他一定不要忘記明天在進入賭場之前做他的幸運儀式。&lt;/p></description></item><item><title>Code - Speiral</title><link>https://soab.github.io/posts/2022-03-19-speiral/</link><pubDate>Sat, 19 Mar 2022 23:14:38 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-19-speiral/</guid><description>&lt;h1 id="質數">質數&lt;/h1>
-&lt;ul>
-&lt;li>質數是上帝用來描寫宇宙的文字…伽俐略語&lt;/li>
-&lt;/ul>
-&lt;p>質數，又稱為素數，是不能被1和本身以外其他整數整除的整數。如：2,3,5,7,11,13,17是前幾固質數，其中2是唯一的偶質數。&lt;/p>
-&lt;h3 id="鳥蘭現象">鳥蘭現象&lt;/h3>
-&lt;p>把質數按照反時針方式排列成螺旋形式，會出現擠成一直線的特性。&lt;/p>
-&lt;p>&lt;img src="images/speiral.gif" alt="O_o">&lt;/p></description></item><item><title>Code - 舍罕王的失算</title><link>https://soab.github.io/posts/2022-03-01/</link><pubDate>Tue, 01 Mar 2022 18:14:03 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-01/</guid><description>&lt;h3 id="舍罕王的失算--不可忽視的總合和乘績">舍罕王的失算 &amp;ndash; 不可忽視的總合和乘績&lt;/h3>
-&lt;p>（Shirham）舍罕王因為裝B，想給宰相提要求自已要的賞賜。宰相理所當然的就提出了B到天邊的要求：&lt;/p>
-&lt;ul>
-&lt;li>在8X8的格子裏每天放麥子，第一格1粒，第2格2粒，第3格4粒，每一天都比前一天多一倍的數量，直到64天結束。&lt;/li>
-&lt;/ul>
-&lt;p>這是個等比級數求合的問題。
-$Sum = 2^0+2^1+2^2+2^3+2^4+&amp;hellip;.+2^{63}$&lt;/p></description></item><item><title>Code - R10</title><link>https://soab.github.io/posts/2022-01-22-r10/</link><pubDate>Sat, 22 Jan 2022 14:18:00 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-22-r10/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
+The user is asking to determine the value for 5 = ?.&lt;/p&gt;</description></item><item><title>Code - Line effect</title><link>https://soab.github.io/posts/2025-01-24/</link><pubDate>Fri, 24 Jan 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-01-24/</guid><description>&lt;h1 id="line-effect"&gt;Line Effect&lt;/h1&gt;
+&lt;p&gt;Learning Zig programming language &amp;hellip;&lt;/p&gt;
+&lt;p&gt;Line effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
+&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/screenline.gif" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Code - Particle_effect</title><link>https://soab.github.io/posts/2024-11-30-particle_effect/</link><pubDate>Sat, 30 Nov 2024 12:45:12 +0800</pubDate><guid>https://soab.github.io/posts/2024-11-30-particle_effect/</guid><description>&lt;h1 id="particle-effect"&gt;Particle Effect&lt;/h1&gt;
+&lt;p&gt;Learning Zig programming language &amp;hellip;&lt;/p&gt;
+&lt;p&gt;Particle effect for learning zig&amp;rsquo;s struct random and raylib implementation ect.
+&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/screenpar.gif" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Code - Lissajous</title><link>https://soab.github.io/posts/2022-05-02-liss/</link><pubDate>Mon, 02 May 2022 22:43:35 +0800</pubDate><guid>https://soab.github.io/posts/2022-05-02-liss/</guid><description>&lt;h1 id="lissajous-figure"&gt;Lissajous figure&lt;/h1&gt;
+&lt;p&gt;數學上，利薩茹曲線是兩個沿著互相垂直方向的正弦振動的合成的軌跡。&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/lissajous.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Casino - Gamblers</title><link>https://soab.github.io/posts/2022-04-04-casino/</link><pubDate>Mon, 04 Apr 2022 16:41:37 +0800</pubDate><guid>https://soab.github.io/posts/2022-04-04-casino/</guid><description>&lt;p&gt;大多數（如果不是全部的話）賭徒都是迷信的。他們有幸運日，幸運的衣服，幸運的數字，無論什麼 - 總是有一個明顯的原因來贏得或失去。因此，第一張圖表的好成績是因為玩家的幸運T恤（它是藍色，他的幸運顏色），但是當他無意中交叉雙腿時，一切都出了問題。此外，他一定不要忘記明天在進入賭場之前做他的幸運儀式。&lt;/p&gt;</description></item><item><title>Code - Speiral</title><link>https://soab.github.io/posts/2022-03-19-speiral/</link><pubDate>Sat, 19 Mar 2022 23:14:38 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-19-speiral/</guid><description>&lt;h1 id="質數"&gt;質數&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;質數是上帝用來描寫宇宙的文字…伽俐略語&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;質數，又稱為素數，是不能被1和本身以外其他整數整除的整數。如：2,3,5,7,11,13,17是前幾固質數，其中2是唯一的偶質數。&lt;/p&gt;
+&lt;h3 id="鳥蘭現象"&gt;鳥蘭現象&lt;/h3&gt;
+&lt;p&gt;把質數按照反時針方式排列成螺旋形式，會出現擠成一直線的特性。&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/speiral.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - 舍罕王的失算</title><link>https://soab.github.io/posts/2022-03-01/</link><pubDate>Tue, 01 Mar 2022 18:14:03 +0800</pubDate><guid>https://soab.github.io/posts/2022-03-01/</guid><description>&lt;h3 id="舍罕王的失算--不可忽視的總合和乘績"&gt;舍罕王的失算 &amp;ndash; 不可忽視的總合和乘績&lt;/h3&gt;
+&lt;p&gt;（Shirham）舍罕王因為裝B，想給宰相提要求自已要的賞賜。宰相理所當然的就提出了B到天邊的要求：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在8X8的格子裏每天放麥子，第一格1粒，第2格2粒，第3格4粒，每一天都比前一天多一倍的數量，直到64天結束。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;這是個等比級數求合的問題。
+$Sum = 2^0+2^1+2^2+2^3+2^4+&amp;hellip;.+2^{63}$&lt;/p&gt;</description></item><item><title>Code - R10</title><link>https://soab.github.io/posts/2022-01-22-r10/</link><pubDate>Sat, 22 Jan 2022 14:18:00 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-22-r10/</guid><description>&lt;p&gt;關於 &lt;a href="https://natureofcode.com/book/"&gt;Nature of Code&lt;/a&gt;&lt;br&gt;
 Ch 10 - Neural Networks - Steering Perceptron 的實驗程式。
-使用 &lt;a href="https://ebiten.org/">Ebiten&lt;/a>Library.&lt;/p>
-&lt;p>&lt;img src="images/r10.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R9</title><link>https://soab.github.io/posts/2022-01-19-r9/</link><pubDate>Wed, 19 Jan 2022 22:18:41 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-19-r9/</guid><description>&lt;p>關於 &lt;a href="https://natureofcode.com/book/">Nature of Code&lt;/a>&lt;br>
+使用 &lt;a href="https://ebiten.org/"&gt;Ebiten&lt;/a&gt;Library.&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/r10.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R9</title><link>https://soab.github.io/posts/2022-01-19-r9/</link><pubDate>Wed, 19 Jan 2022 22:18:41 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-19-r9/</guid><description>&lt;p&gt;關於 &lt;a href="https://natureofcode.com/book/"&gt;Nature of Code&lt;/a&gt;&lt;br&gt;
 Evolution EcoSystem 的實驗程式。
-使用 &lt;a href="https://ebiten.org/">Ebiten&lt;/a>Library.&lt;/p>
-&lt;p>&lt;img src="images/r9.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R8</title><link>https://soab.github.io/posts/2022-01-09-r8/</link><pubDate>Sun, 09 Jan 2022 19:43:05 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-09-r8/</guid><description>&lt;p>Nature of Code 之 8 - Fractals.
+使用 &lt;a href="https://ebiten.org/"&gt;Ebiten&lt;/a&gt;Library.&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/r9.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R8</title><link>https://soab.github.io/posts/2022-01-09-r8/</link><pubDate>Sun, 09 Jan 2022 19:43:05 +0800</pubDate><guid>https://soab.github.io/posts/2022-01-09-r8/</guid><description>&lt;p&gt;Nature of Code 之 8 - Fractals.
 Koch Curve &amp;ndash; KochLine
-&lt;img src="images/r8.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R7</title><link>https://soab.github.io/posts/2021-12-27-r7/</link><pubDate>Mon, 27 Dec 2021 15:09:20 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-27-r7/</guid><description>&lt;h2 id="nature-of-code-之-7---ca">Nature of Code 之 7 - CA&lt;/h2>
-&lt;h3 id="game-of-life">Game of Life&lt;/h3>
-&lt;p>&lt;img src="images/r7.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R6</title><link>https://soab.github.io/posts/2021-12-14-r6/</link><pubDate>Tue, 14 Dec 2021 19:28:58 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-14-r6/</guid><description>&lt;p>Nature of Code 之 6 - Autonomous Agents
-Vehicle&amp;rsquo;s Wander .&lt;/p>
-&lt;h5 id="改用vlang">改用&lt;a href="https://vlang.io/">VLANG&lt;/a>&lt;/h5>
-&lt;p>&lt;img src="images/r6.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R4</title><link>https://soab.github.io/posts/2021-12-02-r4/</link><pubDate>Thu, 02 Dec 2021 17:54:06 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-02-r4/</guid><description>&lt;p>Nature of Code 之 4 - Particle.
+&lt;img src="images/r8.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R7</title><link>https://soab.github.io/posts/2021-12-27-r7/</link><pubDate>Mon, 27 Dec 2021 15:09:20 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-27-r7/</guid><description>&lt;h2 id="nature-of-code-之-7---ca"&gt;Nature of Code 之 7 - CA&lt;/h2&gt;
+&lt;h3 id="game-of-life"&gt;Game of Life&lt;/h3&gt;
+&lt;p&gt;&lt;img src="images/r7.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R6</title><link>https://soab.github.io/posts/2021-12-14-r6/</link><pubDate>Tue, 14 Dec 2021 19:28:58 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-14-r6/</guid><description>&lt;p&gt;Nature of Code 之 6 - Autonomous Agents
+Vehicle&amp;rsquo;s Wander .&lt;/p&gt;
+&lt;h5 id="改用vlang"&gt;改用&lt;a href="https://vlang.io/"&gt;VLANG&lt;/a&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;img src="images/r6.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R4</title><link>https://soab.github.io/posts/2021-12-02-r4/</link><pubDate>Thu, 02 Dec 2021 17:54:06 +0800</pubDate><guid>https://soab.github.io/posts/2021-12-02-r4/</guid><description>&lt;p&gt;Nature of Code 之 4 - Particle.
 Particle System uses list .
-&lt;img src="images/r4.gif" alt="O_o">&lt;/p></description></item><item><title>Code - R3</title><link>https://soab.github.io/posts/2021-11-28-code-r3/</link><pubDate>Sun, 28 Nov 2021 23:12:24 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-28-code-r3/</guid><description>&lt;p>Nature of Code 之 3 - Oscillator .&lt;/p></description></item><item><title>CODE - SGI +</title><link>https://soab.github.io/posts/2021-11-27-sgi_image/</link><pubDate>Sat, 27 Nov 2021 17:07:44 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-27-sgi_image/</guid><description>&lt;p>因為需要所以SGI加入讀取bmp檔作為TEXTURE貼圖用，增加程式：&lt;/p></description></item><item><title>Code - R2</title><link>https://soab.github.io/posts/2021-11-23-r2/</link><pubDate>Tue, 23 Nov 2021 20:58:12 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-23-r2/</guid><description>&lt;p>Nature of Code 之 2 - Force
-用 Vector + Force 所作的 Mover。&lt;/p></description></item><item><title>Code - R1</title><link>https://soab.github.io/posts/2021-11-21-r1/</link><pubDate>Sun, 21 Nov 2021 18:58:29 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-21-r1/</guid><description>&lt;p>Nature of Code 之 1 - Vector
-用 Vector 所作的 Mover。&lt;/p></description></item><item><title>騙經-脫剝騙-假馬脫緞</title><link>https://soab.github.io/posts/2021-11-20-bibleoflie1/</link><pubDate>Sat, 20 Nov 2021 19:10:39 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-20-bibleoflie1/</guid><description>&lt;h3 id="假馬脫緞">假馬脫緞&lt;/h3>
-&lt;p>江西有陳姓慶名者，常販馬，徃南京承恩寺前，三山街賣。時有一疋銀合好馬，價約值四十金。忽有一棍，擎好傘，穿色衣，翩然而來，佇立瞻顧，不忍舍去。遂問曰：「此馬價賣幾許？」慶曰：「四十兩。」棍曰：「我買，但要歸家作契對銀。」慶問：「何住？」棍曰：「居洪武門。」棍遂騎銀合馬徃，慶亦騎馬随後。&lt;/p></description></item><item><title>Code - R0</title><link>https://soab.github.io/posts/2021-11-19-code/</link><pubDate>Fri, 19 Nov 2021 19:18:55 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-19-code/</guid><description>&lt;p>Nature of Code 之 0 - intorduction
-用 Perlin noise 所作的walker。&lt;/p></description></item><item><title>Code - 56</title><link>https://soab.github.io/posts/2021-11-12-code/</link><pubDate>Fri, 12 Nov 2021 19:35:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-12-code/</guid><description>&lt;p>A SDL2 Graphics Interface for pure c99.&lt;/p></description></item><item><title>勸世歌</title><link>https://soab.github.io/posts/gold-flower-13/</link><pubDate>Fri, 12 Nov 2021 18:21:09 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-13/</guid><description>&lt;h2 id="第十三章-勸世歌">第十三章 勸世歌&lt;/h2>
-&lt;blockquote>
-&lt;p>吾因度世丹中熱，不惜婆心並饒舌。世尊亦為大因緣，直指生死真可惜。
+&lt;img src="images/r4.gif" alt="O_o"&gt;&lt;/p&gt;</description></item><item><title>Code - R3</title><link>https://soab.github.io/posts/2021-11-28-code-r3/</link><pubDate>Sun, 28 Nov 2021 23:12:24 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-28-code-r3/</guid><description>&lt;p&gt;Nature of Code 之 3 - Oscillator .&lt;/p&gt;</description></item><item><title>CODE - SGI +</title><link>https://soab.github.io/posts/2021-11-27-sgi_image/</link><pubDate>Sat, 27 Nov 2021 17:07:44 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-27-sgi_image/</guid><description>&lt;p&gt;因為需要所以SGI加入讀取bmp檔作為TEXTURE貼圖用，增加程式：&lt;/p&gt;</description></item><item><title>Code - R2</title><link>https://soab.github.io/posts/2021-11-23-r2/</link><pubDate>Tue, 23 Nov 2021 20:58:12 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-23-r2/</guid><description>&lt;p&gt;Nature of Code 之 2 - Force
+用 Vector + Force 所作的 Mover。&lt;/p&gt;</description></item><item><title>Code - R1</title><link>https://soab.github.io/posts/2021-11-21-r1/</link><pubDate>Sun, 21 Nov 2021 18:58:29 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-21-r1/</guid><description>&lt;p&gt;Nature of Code 之 1 - Vector
+用 Vector 所作的 Mover。&lt;/p&gt;</description></item><item><title>騙經-脫剝騙-假馬脫緞</title><link>https://soab.github.io/posts/2021-11-20-bibleoflie1/</link><pubDate>Sat, 20 Nov 2021 19:10:39 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-20-bibleoflie1/</guid><description>&lt;h3 id="假馬脫緞"&gt;假馬脫緞&lt;/h3&gt;
+&lt;p&gt;江西有陳姓慶名者，常販馬，徃南京承恩寺前，三山街賣。時有一疋銀合好馬，價約值四十金。忽有一棍，擎好傘，穿色衣，翩然而來，佇立瞻顧，不忍舍去。遂問曰：「此馬價賣幾許？」慶曰：「四十兩。」棍曰：「我買，但要歸家作契對銀。」慶問：「何住？」棍曰：「居洪武門。」棍遂騎銀合馬徃，慶亦騎馬随後。&lt;/p&gt;</description></item><item><title>Code - R0</title><link>https://soab.github.io/posts/2021-11-19-code/</link><pubDate>Fri, 19 Nov 2021 19:18:55 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-19-code/</guid><description>&lt;p&gt;Nature of Code 之 0 - intorduction
+用 Perlin noise 所作的walker。&lt;/p&gt;</description></item><item><title>Code - 56</title><link>https://soab.github.io/posts/2021-11-12-code/</link><pubDate>Fri, 12 Nov 2021 19:35:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-12-code/</guid><description>&lt;p&gt;A SDL2 Graphics Interface for pure c99.&lt;/p&gt;</description></item><item><title>勸世歌</title><link>https://soab.github.io/posts/gold-flower-13/</link><pubDate>Fri, 12 Nov 2021 18:21:09 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-13/</guid><description>&lt;h2 id="第十三章-勸世歌"&gt;第十三章 勸世歌&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;吾因度世丹中熱，不惜婆心並饒舌。世尊亦為大因緣，直指生死真可惜。
 老君也患有吾身，傳示穀神人不識。吾今略說尋真路：黃中通理載大易，
 正位居體是玄關。子午中間堪定息，光回祖竅萬神安。藥產川原一氣出，
 透幕變化有金光。一輪紅曰常赫赫，世人錯認坎離精。搬運心腎成間隔，
 如何人道合天心。天若符合道自合，放下萬緣毫不起。此是先天真無極，
 太虛穆穆朕兆捐。性命關頭忘意識，意識忘後見本真。水清珠現玄難測，
 無始煩障一旦空。玉京降下九龍冊，步雲漢今登天關，掌雷霆兮驅霹靂。
-凝神定息是初機，退藏密地為常寂。&lt;/p>&lt;/blockquote></description></item><item><title>周天</title><link>https://soab.github.io/posts/gold-flower-12/</link><pubDate>Fri, 12 Nov 2021 18:21:07 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-12/</guid><description>&lt;h2 id="第十二章-周天">第十二章 周天&lt;/h2>
-&lt;p>周天非以氣作主，以心到為妙訣。若畢竟如何周天，是助長也，無心而守，無意而行。&lt;/p></description></item><item><title>坎離交媾</title><link>https://soab.github.io/posts/gold-flower-11/</link><pubDate>Fri, 12 Nov 2021 18:21:03 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-11/</guid><description>&lt;h2 id="第十一章-坎離交媾">第十一章 坎離交媾&lt;/h2>
-&lt;p>凡漏泄精神，動而交物者，皆離也。凡收轉神識，靜而中涵者，皆坎也。&lt;/p></description></item><item><title>性光識光</title><link>https://soab.github.io/posts/gold-flower-10/</link><pubDate>Fri, 12 Nov 2021 18:21:00 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-10/</guid><description>&lt;h2 id="第十章-性光識光">第十章 性光識光&lt;/h2>
-&lt;p>回光之法，原通行住坐臥，只要自得機竅。&lt;/p></description></item><item><title>百曰築基</title><link>https://soab.github.io/posts/gold-flower-9/</link><pubDate>Fri, 12 Nov 2021 18:20:44 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-9/</guid><description>&lt;h2 id="第九章-百曰築基">第九章 百曰築基&lt;/h2>
-&lt;p>《&lt;a href="https://zh.wikisource.org/wiki/%E5%BF%83%E5%8D%B0%E7%B6%93">心印經&lt;/a>》云：「回風混合，百曰功靈。」總之立基百日，方有真光如。&lt;/p></description></item><item><title>道遙訣</title><link>https://soab.github.io/posts/gold-flower-8/</link><pubDate>Fri, 12 Nov 2021 18:20:38 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-8/</guid><description>&lt;h2 id="第八章-道遙訣">第八章 道遙訣&lt;/h2>
-&lt;blockquote>
-&lt;p>玉清留下道遙訣，四字凝神入氣穴。
+凝神定息是初機，退藏密地為常寂。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>周天</title><link>https://soab.github.io/posts/gold-flower-12/</link><pubDate>Fri, 12 Nov 2021 18:21:07 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-12/</guid><description>&lt;h2 id="第十二章-周天"&gt;第十二章 周天&lt;/h2&gt;
+&lt;p&gt;周天非以氣作主，以心到為妙訣。若畢竟如何周天，是助長也，無心而守，無意而行。&lt;/p&gt;</description></item><item><title>坎離交媾</title><link>https://soab.github.io/posts/gold-flower-11/</link><pubDate>Fri, 12 Nov 2021 18:21:03 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-11/</guid><description>&lt;h2 id="第十一章-坎離交媾"&gt;第十一章 坎離交媾&lt;/h2&gt;
+&lt;p&gt;凡漏泄精神，動而交物者，皆離也。凡收轉神識，靜而中涵者，皆坎也。&lt;/p&gt;</description></item><item><title>性光識光</title><link>https://soab.github.io/posts/gold-flower-10/</link><pubDate>Fri, 12 Nov 2021 18:21:00 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-10/</guid><description>&lt;h2 id="第十章-性光識光"&gt;第十章 性光識光&lt;/h2&gt;
+&lt;p&gt;回光之法，原通行住坐臥，只要自得機竅。&lt;/p&gt;</description></item><item><title>百曰築基</title><link>https://soab.github.io/posts/gold-flower-9/</link><pubDate>Fri, 12 Nov 2021 18:20:44 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-9/</guid><description>&lt;h2 id="第九章-百曰築基"&gt;第九章 百曰築基&lt;/h2&gt;
+&lt;p&gt;《&lt;a href="https://zh.wikisource.org/wiki/%E5%BF%83%E5%8D%B0%E7%B6%93"&gt;心印經&lt;/a&gt;》云：「回風混合，百曰功靈。」總之立基百日，方有真光如。&lt;/p&gt;</description></item><item><title>道遙訣</title><link>https://soab.github.io/posts/gold-flower-8/</link><pubDate>Fri, 12 Nov 2021 18:20:38 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-8/</guid><description>&lt;h2 id="第八章-道遙訣"&gt;第八章 道遙訣&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;玉清留下道遙訣，四字凝神入氣穴。
 六月俄看白雪飛，三更又見日輪赫。
 水中吹起藉巽風，天上游歸食坤德。
-更有一句玄中玄，無何有鄉是真宅。&lt;/p>&lt;/blockquote></description></item><item><title>回光活法</title><link>https://soab.github.io/posts/gold-flower-7/</link><pubDate>Fri, 12 Nov 2021 18:19:47 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-7/</guid><description>&lt;h2 id="第七章-回光活法">第七章 回光活法&lt;/h2>
-&lt;p>回光循循然行去，不要廢棄正業。&lt;/p></description></item><item><title>回光證驗</title><link>https://soab.github.io/posts/gold-flower-6/</link><pubDate>Fri, 12 Nov 2021 18:18:58 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-6/</guid><description>&lt;h2 id="第六章-回光證驗">第六章 回光證驗&lt;/h2>
-&lt;p>證驗亦多，不可以小根小器承當，必思度盡眾生。不可以輕心慢心承當，必須請事斯語。&lt;/p></description></item><item><title>回光差謬</title><link>https://soab.github.io/posts/gold-flower-5/</link><pubDate>Fri, 12 Nov 2021 18:16:32 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-5/</guid><description>&lt;h2 id="第五章-回光差謬">第五章 回光差謬&lt;/h2>
-&lt;p>諸子工夫，漸漸純熟，然枯木岩前錯落多，正要細細開示。此中消息，身到方知，吾今則可以言矣。&lt;/p></description></item><item><title>回光調息</title><link>https://soab.github.io/posts/hqeitw/</link><pubDate>Fri, 12 Nov 2021 18:15:00 +0800</pubDate><guid>https://soab.github.io/posts/hqeitw/</guid><description>&lt;h2 id="第四章-回光調息">第四章 回光調息&lt;/h2>
-&lt;p>宗旨只要純心行去，不求驗而驗自至。大約初機病痛，昏沉散亂，二種盡之。&lt;/p></description></item><item><title>回光守中</title><link>https://soab.github.io/posts/hqei/</link><pubDate>Fri, 12 Nov 2021 18:13:28 +0800</pubDate><guid>https://soab.github.io/posts/hqei/</guid><description>&lt;h2 id="第三章-回光守中">第三章 回光守中&lt;/h2>
-&lt;p>回光之名何昉乎？昉之自文始真人也。回光則天地陰陽之氣無不凝，所謂精思者此也，純氣者此也，純想者此也。&lt;/p></description></item><item><title>元神、識神</title><link>https://soab.github.io/posts/yansan/</link><pubDate>Fri, 12 Nov 2021 14:08:39 +0800</pubDate><guid>https://soab.github.io/posts/yansan/</guid><description>&lt;h2 id="第二章-元神識神">第二章 元神、識神&lt;/h2>
-&lt;p>天地視人如蜉蝣，大道視天地亦泡影。惟元神真性，則超元全而上之。其精氣則隨天地而敗壞矣。&lt;/p></description></item><item><title>天心</title><link>https://soab.github.io/posts/tae1/</link><pubDate>Thu, 11 Nov 2021 23:10:40 +0800</pubDate><guid>https://soab.github.io/posts/tae1/</guid><description>&lt;h2 id="第一章-天心">第一章 天心&lt;/h2>
-&lt;p>自然曰道，道無名相，一性而已，一元神而已。&lt;/p></description></item><item><title>人生</title><link>https://soab.github.io/posts/2021-11-11/</link><pubDate>Thu, 11 Nov 2021 22:36:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-11/</guid><description>&lt;h3 id="人的一生要死去三次">人的一生，要死去三次。&lt;/h3>
-&lt;ul>
-&lt;li>第一次，當你的心跳停止，呼吸消逝，你在生物學上被宣告了死亡！&lt;/li>
-&lt;/ul></description></item><item><title>歷年文章</title><link>https://soab.github.io/archives/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://soab.github.io/archives/</guid><description>歷年文章</description></item></channel></rss>
+更有一句玄中玄，無何有鄉是真宅。&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>回光活法</title><link>https://soab.github.io/posts/gold-flower-7/</link><pubDate>Fri, 12 Nov 2021 18:19:47 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-7/</guid><description>&lt;h2 id="第七章-回光活法"&gt;第七章 回光活法&lt;/h2&gt;
+&lt;p&gt;回光循循然行去，不要廢棄正業。&lt;/p&gt;</description></item><item><title>回光證驗</title><link>https://soab.github.io/posts/gold-flower-6/</link><pubDate>Fri, 12 Nov 2021 18:18:58 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-6/</guid><description>&lt;h2 id="第六章-回光證驗"&gt;第六章 回光證驗&lt;/h2&gt;
+&lt;p&gt;證驗亦多，不可以小根小器承當，必思度盡眾生。不可以輕心慢心承當，必須請事斯語。&lt;/p&gt;</description></item><item><title>回光差謬</title><link>https://soab.github.io/posts/gold-flower-5/</link><pubDate>Fri, 12 Nov 2021 18:16:32 +0800</pubDate><guid>https://soab.github.io/posts/gold-flower-5/</guid><description>&lt;h2 id="第五章-回光差謬"&gt;第五章 回光差謬&lt;/h2&gt;
+&lt;p&gt;諸子工夫，漸漸純熟，然枯木岩前錯落多，正要細細開示。此中消息，身到方知，吾今則可以言矣。&lt;/p&gt;</description></item><item><title>回光調息</title><link>https://soab.github.io/posts/hqeitw/</link><pubDate>Fri, 12 Nov 2021 18:15:00 +0800</pubDate><guid>https://soab.github.io/posts/hqeitw/</guid><description>&lt;h2 id="第四章-回光調息"&gt;第四章 回光調息&lt;/h2&gt;
+&lt;p&gt;宗旨只要純心行去，不求驗而驗自至。大約初機病痛，昏沉散亂，二種盡之。&lt;/p&gt;</description></item><item><title>回光守中</title><link>https://soab.github.io/posts/hqei/</link><pubDate>Fri, 12 Nov 2021 18:13:28 +0800</pubDate><guid>https://soab.github.io/posts/hqei/</guid><description>&lt;h2 id="第三章-回光守中"&gt;第三章 回光守中&lt;/h2&gt;
+&lt;p&gt;回光之名何昉乎？昉之自文始真人也。回光則天地陰陽之氣無不凝，所謂精思者此也，純氣者此也，純想者此也。&lt;/p&gt;</description></item><item><title>元神、識神</title><link>https://soab.github.io/posts/yansan/</link><pubDate>Fri, 12 Nov 2021 14:08:39 +0800</pubDate><guid>https://soab.github.io/posts/yansan/</guid><description>&lt;h2 id="第二章-元神識神"&gt;第二章 元神、識神&lt;/h2&gt;
+&lt;p&gt;天地視人如蜉蝣，大道視天地亦泡影。惟元神真性，則超元全而上之。其精氣則隨天地而敗壞矣。&lt;/p&gt;</description></item><item><title>天心</title><link>https://soab.github.io/posts/tae1/</link><pubDate>Thu, 11 Nov 2021 23:10:40 +0800</pubDate><guid>https://soab.github.io/posts/tae1/</guid><description>&lt;h2 id="第一章-天心"&gt;第一章 天心&lt;/h2&gt;
+&lt;p&gt;自然曰道，道無名相，一性而已，一元神而已。&lt;/p&gt;</description></item><item><title>人生</title><link>https://soab.github.io/posts/2021-11-11/</link><pubDate>Thu, 11 Nov 2021 22:36:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-11/</guid><description>&lt;h3 id="人的一生要死去三次"&gt;人的一生，要死去三次。&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一次，當你的心跳停止，呼吸消逝，你在生物學上被宣告了死亡！&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>歷年文章</title><link>https://soab.github.io/archives/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://soab.github.io/archives/</guid><description>歷年文章</description></item></channel></rss>

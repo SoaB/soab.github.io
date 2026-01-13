@@ -1,5 +1,4 @@
-<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Code - ECS ? Particles + arena + Quad Tree - 札記</title>
-<meta name=description content="ECS Arena QuadTree
+<!doctype html><html lang=en itemscope itemtype=http://schema.org/WebPage><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><title>Code - ECS ? Particles + arena + Quad Tree - 札記</title><meta name=description content="ECS Arena QuadTree
 ECS是𠁭，可以吃嗎?
 Arena , QuadTree 這東東又有何特別?
 這次用30000個Particles來實驗一下下，有沒有廣告說的這麼強 !!!
@@ -11,7 +10,7 @@ Arena , QuadTree 這東東又有何特別?
 ECS是𠁭，可以吃嗎?
 Arena , QuadTree 這東東又有何特別?
 這次用30000個Particles來實驗一下下，有沒有廣告說的這麼強 !!!
-"><meta name=twitter:image content="https://soab.github.io/images/avatar.png"><meta name=twitter:card content="summary_large_image"><link href=https://soab.github.io/img/favicon.ico rel=icon type=image/x-icon><meta name=generator content="Hugo 0.146.5"><link rel=alternate href=https://soab.github.io/index.xml type=application/rss+xml title=SoaB><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css integrity=sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v6.6.0/css/all.css integrity=sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css integrity=sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu crossorigin=anonymous><link rel=stylesheet href=https://soab.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://soab.github.io/css/highlight.min.css><link rel=stylesheet href=https://soab.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
+"><meta name=twitter:image content="https://soab.github.io/images/avatar.png"><meta name=twitter:card content="summary_large_image"><link href=https://soab.github.io/img/favicon.ico rel=icon type=image/x-icon><meta name=generator content="Hugo 0.154.5"><link rel=alternate href=https://soab.github.io/index.xml type=application/rss+xml title=SoaB><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css integrity=sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v6.6.0/css/all.css integrity=sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css integrity=sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu crossorigin=anonymous><link rel=stylesheet href=https://soab.github.io/css/main.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"><link rel=stylesheet href=https://soab.github.io/css/highlight.min.css><link rel=stylesheet href=https://soab.github.io/css/codeblock.css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css integrity=sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css integrity=sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R crossorigin=anonymous></head><body><nav class="navbar navbar-default navbar-fixed-top navbar-custom"><div class=container-fluid><div class=navbar-header><button type=button class=navbar-toggle data-toggle=collapse data-target=#main-navbar>
 <span class=sr-only>Toggle navigation</span>
 <span class=icon-bar></span>
 <span class=icon-bar></span>
@@ -31,143 +30,143 @@ Arena , QuadTree 這東東又有何特別?
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;raymath.h&#34;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdio.h&gt; // 增加用於調試輸出的引用 (如果需要)</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;stdlib.h&gt; // 用於 rand(), malloc(), free()</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#define ARENA_IMPLEMENTATION
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;arena.h&#34;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#define MAX_PARTICLES 30000 </span><span style=color:#75715e>// 最大粒子數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#define MAX_PARTICLES_PER_NODE 4 </span><span style=color:#75715e>// 四叉樹每個葉節點能容納的最大粒子索引數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#define MAX_PARTICLES_PER_NODE 4 </span><span style=color:#75715e>// 四叉樹每個葉節點能容納的最大粒子索引數量
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 粒子組件結構，包含位置和速度
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> {
 </span></span><span style=display:flex><span>    Vector2 position;
 </span></span><span style=display:flex><span>    Vector2 velocity;
 </span></span><span style=display:flex><span>} ParticleComponent;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 粒子系統結構，包含所有粒子和當前粒子數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> {
 </span></span><span style=display:flex><span>    ParticleComponent particles[MAX_PARTICLES]; <span style=color:#75715e>// 粒子數據陣列
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> count; <span style=color:#75715e>// 當前粒子數量 (此範例中固定為 MAX_PARTICLES)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} ParticleSystem;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> count; <span style=color:#75715e>// 當前粒子數量 (此範例中固定為 MAX_PARTICLES)
+</span></span></span><span style=display:flex><span>} ParticleSystem;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 四叉樹節點結構
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> QuadTreeNode {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>typedef</span> <span style=color:#66d9ef>struct</span> QuadTreeNode {
 </span></span><span style=display:flex><span>    Rectangle bounds; <span style=color:#75715e>// 此節點代表的空間範圍
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> particles[MAX_PARTICLES_PER_NODE]; <span style=color:#75715e>// 儲存在此葉節點中的粒子 *索引* (僅葉節點有效)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> count; <span style=color:#75715e>// 儲存在此節點的粒子數量 (僅葉節點有效)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>struct</span> QuadTreeNode<span style=color:#f92672>*</span> children[<span style=color:#ae81ff>4</span>]; <span style=color:#75715e>// 子節點指標 (左上, 右上, 左下, 右下)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                                      <span style=color:#75715e>// 如果 children[0] == NULL，表示這是葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>} QuadTreeNode;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> particles[MAX_PARTICLES_PER_NODE]; <span style=color:#75715e>// 儲存在此葉節點中的粒子 *索引* (僅葉節點有效)
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> count; <span style=color:#75715e>// 儲存在此節點的粒子數量 (僅葉節點有效)
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>struct</span> QuadTreeNode<span style=color:#f92672>*</span> children[<span style=color:#ae81ff>4</span>]; <span style=color:#75715e>// 子節點指標 (左上, 右上, 左下, 右下)
+</span></span></span><span style=display:flex><span>                                      <span style=color:#75715e>// 如果 children[0] == NULL，表示這是葉節點
+</span></span></span><span style=display:flex><span>} QuadTreeNode;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// --- 函數原型宣告 ---
 </span></span></span><span style=display:flex><span><span style=color:#75715e>// 初始化粒子系統
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InitParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InitParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 更新粒子系統狀態 (包含物理模擬和四叉樹交互)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem_NoQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem_NoQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime);
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 繪製粒子系統
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>DrawParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>DrawParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 創建一個新的四叉樹節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(Rectangle bounds);
+</span></span></span><span style=display:flex><span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(Rectangle bounds);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 分裂一個滿載的四叉樹葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>SplitQuadTreeNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, ParticleSystem<span style=color:#f92672>*</span> system);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>SplitQuadTreeNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, ParticleSystem<span style=color:#f92672>*</span> system);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 將粒子插入到四叉樹節點 (會遞迴處理)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InsertParticleToNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, <span style=color:#66d9ef>int</span> particleIndex, ParticleSystem<span style=color:#f92672>*</span> system);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InsertParticleToNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, <span style=color:#66d9ef>int</span> particleIndex, ParticleSystem<span style=color:#f92672>*</span> system);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 建立整個四叉樹
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>BuildQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Rectangle bounds);
+</span></span></span><span style=display:flex><span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>BuildQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Rectangle bounds);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 查詢四叉樹中與指定矩形範圍重疊的粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>QueryQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node, Rectangle queryRect, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> result, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> count);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>QueryQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node, Rectangle queryRect, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> result, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> count);
 </span></span><span style=display:flex><span><span style=color:#75715e>// 釋放整個四叉樹的記憶體
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>FreeQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>FreeQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 主函數
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>Arena arena <span style=color:#f92672>=</span> { <span style=color:#ae81ff>0</span> };
+</span></span></span><span style=display:flex><span>Arena arena <span style=color:#f92672>=</span> { <span style=color:#ae81ff>0</span> };
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>()
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 螢幕尺寸
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> screenWidth <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> screenWidth <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>int</span> screenHeight <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>;
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>arena_init</span>(<span style=color:#f92672>&amp;</span>arena);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 初始化 Raylib 窗口
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>InitWindow</span>(screenWidth, screenHeight, <span style=color:#e6db74>&#34;粒子系統與四叉樹優化 (Particle System with QuadTree)&#34;</span>);
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>InitWindow</span>(screenWidth, screenHeight, <span style=color:#e6db74>&#34;粒子系統與四叉樹優化 (Particle System with QuadTree)&#34;</span>);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 創建粒子系統實例
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    ParticleSystem system;
+</span></span></span><span style=display:flex><span>    ParticleSystem system;
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 初始化粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>InitParticleSystem</span>(<span style=color:#f92672>&amp;</span>system);
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>InitParticleSystem</span>(<span style=color:#f92672>&amp;</span>system);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 設定目標幀率
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>SetTargetFPS</span>(<span style=color:#ae81ff>60</span>);
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>SetTargetFPS</span>(<span style=color:#ae81ff>60</span>);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 主遊戲迴圈
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>while</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>WindowShouldClose</span>()) { <span style=color:#75715e>// 持續執行直到使用者關閉視窗
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// 獲取幀時間差 (用於物理計算)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>float</span> deltaTime <span style=color:#f92672>=</span> <span style=color:#a6e22e>GetFrameTime</span>();
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>WindowShouldClose</span>()) { <span style=color:#75715e>// 持續執行直到使用者關閉視窗
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// 獲取幀時間差 (用於物理計算)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>float</span> deltaTime <span style=color:#f92672>=</span> <span style=color:#a6e22e>GetFrameTime</span>();
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 獲取滑鼠當前位置
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        Vector2 mousePos <span style=color:#f92672>=</span> <span style=color:#a6e22e>GetMousePosition</span>();
+</span></span></span><span style=display:flex><span>        Vector2 mousePos <span style=color:#f92672>=</span> <span style=color:#a6e22e>GetMousePosition</span>();
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 更新粒子系統狀態
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>UpdateParticleSystem</span>(<span style=color:#f92672>&amp;</span>system, mousePos, deltaTime);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>UpdateParticleSystem</span>(<span style=color:#f92672>&amp;</span>system, mousePos, deltaTime);
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// UpdateParticleSystem_NoQuadTree(&amp;system, mousePos, deltaTime);
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>//  開始繪圖
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>BeginDrawing</span>();
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>//  開始繪圖
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>BeginDrawing</span>();
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 清空背景為黑色
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>ClearBackground</span>(BLACK);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>ClearBackground</span>(BLACK);
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 繪製所有粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>DrawParticleSystem</span>(<span style=color:#f92672>&amp;</span>system);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>DrawParticleSystem</span>(<span style=color:#f92672>&amp;</span>system);
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 在左上角顯示當前 FPS
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>DrawFPS</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>10</span>);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>DrawFPS</span>(<span style=color:#ae81ff>10</span>, <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 結束繪圖
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>EndDrawing</span>();
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>EndDrawing</span>();
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    <span style=color:#a6e22e>arena_destroy</span>(<span style=color:#f92672>&amp;</span>arena);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 關閉 Raylib 窗口並釋放資源
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>CloseWindow</span>();
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>CloseWindow</span>();
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 程式正常結束
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 初始化粒子系統
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InitParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InitParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    system<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>=</span> MAX_PARTICLES; <span style=color:#75715e>// 設定粒子數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 遍歷所有粒子進行初始化
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> MAX_PARTICLES; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 遍歷所有粒子進行初始化
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> MAX_PARTICLES; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 在螢幕範圍內隨機設定初始位置
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        system<span style=color:#f92672>-&gt;</span>particles[i].position.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>800</span>;
+</span></span></span><span style=display:flex><span>        system<span style=color:#f92672>-&gt;</span>particles[i].position.x <span style=color:#f92672>=</span> <span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>800</span>;
 </span></span><span style=display:flex><span>        system<span style=color:#f92672>-&gt;</span>particles[i].position.y <span style=color:#f92672>=</span> <span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>600</span>;
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 設定隨機初始速度 (-10 到 +10 之間)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        system<span style=color:#f92672>-&gt;</span>particles[i].velocity.x <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>50</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>5.0f</span>;
+</span></span></span><span style=display:flex><span>        system<span style=color:#f92672>-&gt;</span>particles[i].velocity.x <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>50</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>5.0f</span>;
 </span></span><span style=display:flex><span>        system<span style=color:#f92672>-&gt;</span>particles[i].velocity.y <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rand</span>() <span style=color:#f92672>%</span> <span style=color:#ae81ff>100</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>50</span>) <span style=color:#f92672>/</span> <span style=color:#ae81ff>5.0f</span>;
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem_NoQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 直接處理所有粒子與滑鼠的互動 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 計算粒子到滑鼠的向量和距離 (與原碼相同)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        Vector2 toMouse <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Subtract</span>(mousePos, p<span style=color:#f92672>-&gt;</span>position);
+</span></span></span><span style=display:flex><span>        Vector2 toMouse <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Subtract</span>(mousePos, p<span style=color:#f92672>-&gt;</span>position);
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>float</span> distance <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Length</span>(toMouse);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果粒子在滑鼠 100 像素範圍內 (與原碼相同)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (distance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>&amp;&amp;</span> distance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100.0f</span>) {
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (distance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>&amp;&amp;</span> distance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100.0f</span>) {
 </span></span><span style=display:flex><span>            Vector2 direction <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Normalize</span>(toMouse);
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 施加吸引力 (與原碼相同)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#a6e22e>Vector2Scale</span>(direction, <span style=color:#ae81ff>50.0f</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>-</span> distance) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>*</span> deltaTime));
+</span></span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#a6e22e>Vector2Scale</span>(direction, <span style=color:#ae81ff>50.0f</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>-</span> distance) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>*</span> deltaTime));
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 增加阻尼 (與原碼相同)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0.1f</span> <span style=color:#f92672>*</span> deltaTime); <span style=color:#75715e>// 可以移到下面統一處理
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        }
+</span></span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0.1f</span> <span style=color:#f92672>*</span> deltaTime); <span style=color:#75715e>// 可以移到下面統一處理
+</span></span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 可以在這裡統一應用阻尼，即使沒受到滑鼠影響
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// p-&gt;velocity = Vector2Scale(p-&gt;velocity, 1.0f - 0.1f * deltaTime);
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// p-&gt;velocity = Vector2Scale(p-&gt;velocity, 1.0f - 0.1f * deltaTime);
+</span></span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 更新所有粒子的位置 (與原碼相同) ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>        p<span style=color:#f92672>-&gt;</span>position <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>position, <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, deltaTime));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 處理邊界條件 (與原碼相同)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>;
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>800</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
@@ -178,164 +177,164 @@ Arena , QuadTree 這東東又有何特別?
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span><span style=color:#75715e>// 更新粒子系統狀態
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>UpdateParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system, Vector2 mousePos, <span style=color:#66d9ef>float</span> deltaTime)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 效能瓶頸核心區域開始 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 定義滑鼠周圍的查詢矩形範圍 (200x200)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    Rectangle queryRect <span style=color:#f92672>=</span> { mousePos.x <span style=color:#f92672>-</span> <span style=color:#ae81ff>100</span>, mousePos.y <span style=color:#f92672>-</span> <span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>200</span>, <span style=color:#ae81ff>200</span> };
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 定義滑鼠周圍的查詢矩形範圍 (200x200)
+</span></span></span><span style=display:flex><span>    Rectangle queryRect <span style=color:#f92672>=</span> { mousePos.x <span style=color:#f92672>-</span> <span style=color:#ae81ff>100</span>, mousePos.y <span style=color:#f92672>-</span> <span style=color:#ae81ff>100</span>, <span style=color:#ae81ff>200</span>, <span style=color:#ae81ff>200</span> };
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// **關鍵效能問題**: 每幀重新建立完整的四叉樹
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 理想情況下，應更新現有樹或使用記憶體池來減少分配開銷
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    QuadTreeNode<span style=color:#f92672>*</span> root <span style=color:#f92672>=</span> <span style=color:#a6e22e>BuildQuadTree</span>(system, (Rectangle) { <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>800</span>, <span style=color:#ae81ff>600</span> }); <span style=color:#75715e>// 根節點範圍為整個螢幕
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 理想情況下，應更新現有樹或使用記憶體池來減少分配開銷
+</span></span></span><span style=display:flex><span>    QuadTreeNode<span style=color:#f92672>*</span> root <span style=color:#f92672>=</span> <span style=color:#a6e22e>BuildQuadTree</span>(system, (Rectangle) { <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>800</span>, <span style=color:#ae81ff>600</span> }); <span style=color:#75715e>// 根節點範圍為整個螢幕
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 用於儲存查詢結果的粒子索引陣列
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> result[MAX_PARTICLES]; <span style=color:#75715e>// 注意: 這裡的大小是 MAX_PARTICLES，以防萬一，但通常遠小於此
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 查詢結果的數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> result[MAX_PARTICLES]; <span style=color:#75715e>// 注意: 這裡的大小是 MAX_PARTICLES，以防萬一，但通常遠小於此
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 查詢結果的數量
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用四叉樹查詢在滑鼠附近的粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>QueryQuadTree</span>(root, queryRect, result, <span style=color:#f92672>&amp;</span>count);
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>QueryQuadTree</span>(root, queryRect, result, <span style=color:#f92672>&amp;</span>count);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 僅處理靠近滑鼠的粒子 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 這個迴圈只遍歷被四叉樹查詢到的粒子，數量相對較少
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 這個迴圈只遍歷被四叉樹查詢到的粒子，數量相對較少
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>int</span> index <span style=color:#f92672>=</span> result[i]; <span style=color:#75715e>// 獲取粒子在 system-&gt;particles 中的索引
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[index]; <span style=color:#75715e>// 獲取該粒子的指針
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[index]; <span style=color:#75715e>// 獲取該粒子的指針
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 計算粒子到滑鼠的向量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        Vector2 toMouse <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Subtract</span>(mousePos, p<span style=color:#f92672>-&gt;</span>position);
+</span></span></span><span style=display:flex><span>        Vector2 toMouse <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Subtract</span>(mousePos, p<span style=color:#f92672>-&gt;</span>position);
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 計算粒子到滑鼠的距離
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>float</span> distance <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Length</span>(toMouse);
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>float</span> distance <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Length</span>(toMouse);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果粒子在滑鼠 100 像素範圍內
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (distance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>&amp;&amp;</span> distance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100.0f</span>) { <span style=color:#75715e>// 避免除以零或距離過近時力過大
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// 計算從粒子指向滑鼠的單位向量 (方向)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            Vector2 direction <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Normalize</span>(toMouse);
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (distance <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>&amp;&amp;</span> distance <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>100.0f</span>) { <span style=color:#75715e>// 避免除以零或距離過近時力過大
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// 計算從粒子指向滑鼠的單位向量 (方向)
+</span></span></span><span style=display:flex><span>            Vector2 direction <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Normalize</span>(toMouse);
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 施加一個排斥力 (方向相反)，力的大小與距離成反比
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// 使用 deltaTime 來確保力的作用與幀率無關
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// p-&gt;velocity = Vector2Subtract(p-&gt;velocity, Vector2Scale(direction, 100.0f / distance * deltaTime)); // 原始排斥
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#a6e22e>Vector2Scale</span>(direction, <span style=color:#ae81ff>50.0f</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>-</span> distance) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>*</span> deltaTime)); <span style=color:#75715e>// 吸引力示例
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        }
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// 使用 deltaTime 來確保力的作用與幀率無關
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// p-&gt;velocity = Vector2Subtract(p-&gt;velocity, Vector2Scale(direction, 100.0f / distance * deltaTime)); // 原始排斥
+</span></span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#a6e22e>Vector2Scale</span>(direction, <span style=color:#ae81ff>50.0f</span> <span style=color:#f92672>*</span> (<span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>-</span> distance) <span style=color:#f92672>/</span> <span style=color:#ae81ff>100.0f</span> <span style=color:#f92672>*</span> deltaTime)); <span style=color:#75715e>// 吸引力示例
+</span></span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 可以增加阻尼效果，讓粒子移動更平滑
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0.1f</span> <span style=color:#f92672>*</span> deltaTime);
+</span></span></span><span style=display:flex><span>        p<span style=color:#f92672>-&gt;</span>velocity <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>0.1f</span> <span style=color:#f92672>*</span> deltaTime);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 更新所有粒子的位置 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 這個迴圈仍然需要遍歷所有粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 這個迴圈仍然需要遍歷所有粒子
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 根據速度更新位置: position += velocity * deltaTime
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        p<span style=color:#f92672>-&gt;</span>position <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>position, <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, deltaTime));
+</span></span></span><span style=display:flex><span>        p<span style=color:#f92672>-&gt;</span>position <span style=color:#f92672>=</span> <span style=color:#a6e22e>Vector2Add</span>(p<span style=color:#f92672>-&gt;</span>position, <span style=color:#a6e22e>Vector2Scale</span>(p<span style=color:#f92672>-&gt;</span>velocity, deltaTime));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 處理邊界條件 (穿牆效果)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>=</span> <span style=color:#ae81ff>800</span>; <span style=color:#75715e>// 從左邊出去，右邊回來
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>800</span>)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>800</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.x <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 從右邊出去，左邊回來
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>=</span> <span style=color:#ae81ff>600</span>; <span style=color:#75715e>// 從上面出去，下面回來
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>600</span>)
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>600</span>)
 </span></span><span style=display:flex><span>            p<span style=color:#f92672>-&gt;</span>position.y <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 從下面出去，上面回來
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }
+</span></span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// **關鍵效能問題**: 每幀釋放整個四叉樹的記憶體
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>FreeQuadTree</span>(root);
+</span></span></span><span style=display:flex><span>    <span style=color:#a6e22e>FreeQuadTree</span>(root);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 效能瓶頸核心區域結束 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 繪製粒子系統
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>DrawParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>DrawParticleSystem</span>(ParticleSystem<span style=color:#f92672>*</span> system)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 遍歷所有粒子並繪製
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        ParticleComponent<span style=color:#f92672>*</span> p <span style=color:#f92672>=</span> <span style=color:#f92672>&amp;</span>system<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 在粒子的位置繪製一個白色的圓點 (半徑 2 像素)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>//        DrawCircle(p-&gt;position.x, p-&gt;position.y, 2, WHITE);
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>DrawPixel</span>(p<span style=color:#f92672>-&gt;</span>position.x, p<span style=color:#f92672>-&gt;</span>position.y, WHITE);
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>//        DrawCircle(p-&gt;position.x, p-&gt;position.y, 2, WHITE);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>DrawPixel</span>(p<span style=color:#f92672>-&gt;</span>position.x, p<span style=color:#f92672>-&gt;</span>position.y, WHITE);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 創建一個新的四叉樹節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(Rectangle bounds)
+</span></span></span><span style=display:flex><span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(Rectangle bounds)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 為新節點分配記憶體
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 優化提示: 這裡可以使用記憶體池來代替 malloc
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>//    QuadTreeNode* node = malloc(sizeof(QuadTreeNode));
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    QuadTreeNode<span style=color:#f92672>*</span> node <span style=color:#f92672>=</span> <span style=color:#a6e22e>arena_alloc</span>(<span style=color:#f92672>&amp;</span>arena, <span style=color:#66d9ef>sizeof</span>(QuadTreeNode));
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 優化提示: 這裡可以使用記憶體池來代替 malloc
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>//    QuadTreeNode* node = malloc(sizeof(QuadTreeNode));
+</span></span></span><span style=display:flex><span>    QuadTreeNode<span style=color:#f92672>*</span> node <span style=color:#f92672>=</span> <span style=color:#a6e22e>arena_alloc</span>(<span style=color:#f92672>&amp;</span>arena, <span style=color:#66d9ef>sizeof</span>(QuadTreeNode));
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>node) {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 處理記憶體分配失敗的情況 (例如，打印錯誤訊息並退出)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;Failed to allocate memory for QuadTreeNode&#34;</span>);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>perror</span>(<span style=color:#e6db74>&#34;Failed to allocate memory for QuadTreeNode&#34;</span>);
 </span></span><span style=display:flex><span>        <span style=color:#a6e22e>exit</span>(EXIT_FAILURE);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>bounds <span style=color:#f92672>=</span> bounds; <span style=color:#75715e>// 設定節點的空間範圍
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 初始化粒子計數為 0 (僅葉節點有效)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 初始化所有子節點為 NULL (表示當前是葉節點)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 初始化粒子計數為 0 (僅葉節點有效)
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 初始化所有子節點為 NULL (表示當前是葉節點)
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        node<span style=color:#f92672>-&gt;</span>children[i] <span style=color:#f92672>=</span> NULL;
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 注意: &#39;particles&#39; 陣列不需要在此處初始化，因為它是節點結構的一部分
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> node;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> node;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 分裂一個滿載的四叉樹葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>SplitQuadTreeNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, ParticleSystem<span style=color:#f92672>*</span> system)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>SplitQuadTreeNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, ParticleSystem<span style=color:#f92672>*</span> system)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 計算子節點的寬度和高度
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> subWidth <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.width <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> subWidth <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.width <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> subHeight <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.height <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>;
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 獲取父節點的左上角座標
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> x <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.x;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> x <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.x;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> y <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>bounds.y;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 創建四個子節點，分別對應四個象限
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 優化提示: 這裡也可以使用記憶體池
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x, y, subWidth, subHeight }); <span style=color:#75715e>// 左上
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x <span style=color:#f92672>+</span> subWidth, y, subWidth, subHeight }); <span style=color:#75715e>// 右上
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x, y <span style=color:#f92672>+</span> subHeight, subWidth, subHeight }); <span style=color:#75715e>// 左下
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x <span style=color:#f92672>+</span> subWidth, y <span style=color:#f92672>+</span> subHeight, subWidth, subHeight }); <span style=color:#75715e>// 右下
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 優化提示: 這裡也可以使用記憶體池
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x, y, subWidth, subHeight }); <span style=color:#75715e>// 左上
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x <span style=color:#f92672>+</span> subWidth, y, subWidth, subHeight }); <span style=color:#75715e>// 右上
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x, y <span style=color:#f92672>+</span> subHeight, subWidth, subHeight }); <span style=color:#75715e>// 左下
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>3</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>((Rectangle) { x <span style=color:#f92672>+</span> subWidth, y <span style=color:#f92672>+</span> subHeight, subWidth, subHeight }); <span style=color:#75715e>// 右下
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// --- 將原來儲存在父節點(現在變為內部節點)的粒子重新分配到新的子節點中 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 臨時儲存父節點的粒子索引和數量
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> tempParticles[MAX_PARTICLES_PER_NODE];
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// 臨時儲存父節點的粒子索引和數量
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> tempParticles[MAX_PARTICLES_PER_NODE];
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> tempCount <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>count;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> tempCount; <span style=color:#f92672>++</span>i) {
 </span></span><span style=display:flex><span>        tempParticles[i] <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 清空父節點的粒子計數 (因為它不再是葉節點)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span></span><span style=display:flex><span>    node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 遍歷臨時儲存的粒子索引
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> tempCount; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> tempCount; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>int</span> index <span style=color:#f92672>=</span> tempParticles[i]; <span style=color:#75715e>// 獲取粒子索引
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        Vector2 pos <span style=color:#f92672>=</span> system<span style=color:#f92672>-&gt;</span>particles[index].position; <span style=color:#75715e>// 獲取粒子位置
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>        Vector2 pos <span style=color:#f92672>=</span> system<span style=color:#f92672>-&gt;</span>particles[index].position; <span style=color:#75715e>// 獲取粒子位置
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 檢查粒子屬於哪個子節點，並將其插入
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; j<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; j <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; j<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>CheckCollisionPointRec</span>(pos, node<span style=color:#f92672>-&gt;</span>children[j]<span style=color:#f92672>-&gt;</span>bounds)) {
 </span></span><span style=display:flex><span>                <span style=color:#a6e22e>InsertParticleToNode</span>(node<span style=color:#f92672>-&gt;</span>children[j], index, system);
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>; <span style=color:#75715e>// 粒子只會屬於一個子節點，找到後跳出內層迴圈
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            }
+</span></span></span><span style=display:flex><span>            }
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 將粒子插入到四叉樹節點 (會遞迴處理)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InsertParticleToNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, <span style=color:#66d9ef>int</span> particleIndex, ParticleSystem<span style=color:#f92672>*</span> system)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>InsertParticleToNode</span>(QuadTreeNode<span style=color:#f92672>*</span> node, <span style=color:#66d9ef>int</span> particleIndex, ParticleSystem<span style=color:#f92672>*</span> system)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 獲取要插入粒子的位置
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    Vector2 pos <span style=color:#f92672>=</span> system<span style=color:#f92672>-&gt;</span>particles[particleIndex].position;
+</span></span></span><span style=display:flex><span>    Vector2 pos <span style=color:#f92672>=</span> system<span style=color:#f92672>-&gt;</span>particles[particleIndex].position;
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 檢查當前節點是否為葉節點 (沒有子節點)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> NULL) { <span style=color:#75715e>// 是葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// 檢查葉節點是否還有空間容納更多粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>&lt;</span> MAX_PARTICLES_PER_NODE) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> NULL) { <span style=color:#75715e>// 是葉節點
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// 檢查葉節點是否還有空間容納更多粒子
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>count <span style=color:#f92672>&lt;</span> MAX_PARTICLES_PER_NODE) {
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// --- 修改點: 直接存入靜態陣列 ---
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            node<span style=color:#f92672>-&gt;</span>particles[node<span style=color:#f92672>-&gt;</span>count] <span style=color:#f92672>=</span> particleIndex; <span style=color:#75715e>// 將粒子索引存入陣列
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            node<span style=color:#f92672>-&gt;</span>count<span style=color:#f92672>++</span>; <span style=color:#75715e>// 增加節點的粒子計數
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        } <span style=color:#66d9ef>else</span> {
+</span></span></span><span style=display:flex><span>            node<span style=color:#f92672>-&gt;</span>particles[node<span style=color:#f92672>-&gt;</span>count] <span style=color:#f92672>=</span> particleIndex; <span style=color:#75715e>// 將粒子索引存入陣列
+</span></span></span><span style=display:flex><span>            node<span style=color:#f92672>-&gt;</span>count<span style=color:#f92672>++</span>; <span style=color:#75715e>// 增加節點的粒子計數
+</span></span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 葉節點已滿，需要分裂
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>SplitQuadTreeNode</span>(node, system);
+</span></span></span><span style=display:flex><span>            <span style=color:#a6e22e>SplitQuadTreeNode</span>(node, system);
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 分裂後，將 *當前正要插入的* 粒子插入到對應的新子節點中
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>CheckCollisionPointRec</span>(pos, node<span style=color:#f92672>-&gt;</span>children[i]<span style=color:#f92672>-&gt;</span>bounds)) {
 </span></span><span style=display:flex><span>                    <span style=color:#a6e22e>InsertParticleToNode</span>(node<span style=color:#f92672>-&gt;</span>children[i], particleIndex, system);
 </span></span><span style=display:flex><span>                    <span style=color:#66d9ef>break</span>;
@@ -343,8 +342,8 @@ Arena , QuadTree 這東東又有何特別?
 </span></span><span style=display:flex><span>            }
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> { <span style=color:#75715e>// 不是葉節點 (是內部節點)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// 將粒子遞迴地插入到對應的子節點中
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// 將粒子遞迴地插入到對應的子節點中
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>CheckCollisionPointRec</span>(pos, node<span style=color:#f92672>-&gt;</span>children[i]<span style=color:#f92672>-&gt;</span>bounds)) {
 </span></span><span style=display:flex><span>                <span style=color:#a6e22e>InsertParticleToNode</span>(node<span style=color:#f92672>-&gt;</span>children[i], particleIndex, system);
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
@@ -354,48 +353,48 @@ Arena , QuadTree 這東東又有何特別?
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 建立整個四叉樹
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>BuildQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Rectangle bounds)
+</span></span></span><span style=display:flex><span>QuadTreeNode<span style=color:#f92672>*</span> <span style=color:#a6e22e>BuildQuadTree</span>(ParticleSystem<span style=color:#f92672>*</span> system, Rectangle bounds)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 創建根節點，範圍由參數指定 (通常是整個螢幕)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    QuadTreeNode<span style=color:#f92672>*</span> root <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(bounds);
+</span></span></span><span style=display:flex><span>    QuadTreeNode<span style=color:#f92672>*</span> root <span style=color:#f92672>=</span> <span style=color:#a6e22e>CreateQuadTreeNode</span>(bounds);
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 遍歷系統中的所有粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> system<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// 將每個粒子插入到四叉樹中 (從根節點開始)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#a6e22e>InsertParticleToNode</span>(root, i, system);
+</span></span></span><span style=display:flex><span>        <span style=color:#a6e22e>InsertParticleToNode</span>(root, i, system);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 返回構建好的四叉樹的根節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> root;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> root;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 查詢四叉樹中與指定矩形範圍重疊的粒子
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>QueryQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node, Rectangle queryRect, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> result, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> count)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>QueryQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node, Rectangle queryRect, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> result, <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> count)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 剪枝: 如果節點的範圍與查詢範圍完全沒有重疊，則無需繼續查詢此分支
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>CheckCollisionRecs</span>(node<span style=color:#f92672>-&gt;</span>bounds, queryRect)) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>CheckCollisionRecs</span>(node<span style=color:#f92672>-&gt;</span>bounds, queryRect)) {
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>;
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// 檢查是否為葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> NULL) { <span style=color:#75715e>// 是葉節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// 遍歷此葉節點中儲存的所有粒子索引
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> node<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (node<span style=color:#f92672>-&gt;</span>children[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> NULL) { <span style=color:#75715e>// 是葉節點
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// 遍歷此葉節點中儲存的所有粒子索引
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> node<span style=color:#f92672>-&gt;</span>count; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// 這裡可以選擇性地再次檢查粒子實際位置是否真的在 queryRect 內 (更精確)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// if (CheckCollisionPointRec(system-&gt;particles[node-&gt;particles[i]].position, queryRect)) {
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                <span style=color:#75715e>// 將粒子索引添加到結果陣列中
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                result[<span style=color:#f92672>*</span>count] <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>particles[i];
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// if (CheckCollisionPointRec(system-&gt;particles[node-&gt;particles[i]].position, queryRect)) {
+</span></span></span><span style=display:flex><span>                <span style=color:#75715e>// 將粒子索引添加到結果陣列中
+</span></span></span><span style=display:flex><span>                result[<span style=color:#f92672>*</span>count] <span style=color:#f92672>=</span> node<span style=color:#f92672>-&gt;</span>particles[i];
 </span></span><span style=display:flex><span>                (<span style=color:#f92672>*</span>count)<span style=color:#f92672>++</span>; <span style=color:#75715e>// 增加結果計數
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#75715e>// }
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        }
+</span></span></span><span style=display:flex><span>            <span style=color:#75715e>// }
+</span></span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> { <span style=color:#75715e>// 是內部節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#75715e>// 遞迴地查詢四個子節點
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
+</span></span></span><span style=display:flex><span>        <span style=color:#75715e>// 遞迴地查詢四個子節點
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>4</span>; i<span style=color:#f92672>++</span>) {
 </span></span><span style=display:flex><span>            <span style=color:#a6e22e>QueryQuadTree</span>(node<span style=color:#f92672>-&gt;</span>children[i], queryRect, result, count);
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 遞迴地釋放整個四叉樹的記憶體
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>FreeQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node)
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>FreeQuadTree</span>(QuadTreeNode<span style=color:#f92672>*</span> node)
 </span></span><span style=display:flex><span>{
 </span></span><span style=display:flex><span><span style=color:#75715e>/*    
 </span></span></span><span style=display:flex><span><span style=color:#75715e>    // 檢查是否為內部節點
@@ -412,7 +411,7 @@ Arena , QuadTree 這東東又有何特別?
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><div class=blog-tags><a href=https://soab.github.io/tags/c/>c</a>&nbsp;
 <a href=https://soab.github.io/tags/raylib/>raylib</a>&nbsp;
-<a href=https://soab.github.io/tags/program/>program</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;text=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree&amp;via=" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;description=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/posts/2025-04-15/>Code - Game Practicum 01</a></li><li><a href=/posts/2025-03-31/>Code -- Simple POKER Game</a></li><li><a href=/posts/2025-03-12/>Code - Lazy Graphics</a></li><li><a href=/posts/2025-02-23/>Code - Pong Game</a></li><li><a href=/posts/2025-01-24/>Code - Line effect</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://soab.github.io/posts/2025-04-15/ data-toggle=tooltip data-placement=top title="Code - Game Practicum 01">&larr; Previous Post</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
-2025
+<a href=https://soab.github.io/tags/program/>program</a>&nbsp;</div><hr><section id=social-share><div class="list-inline footer-links"><div class=share-box aria-hidden=true><ul class=share><li><a href="//twitter.com/share?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;text=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree&amp;via=" target=_blank title="Share on Twitter"><i class="fab fa-twitter"></i></a></li><li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f" target=_blank title="Share on Facebook"><i class="fab fa-facebook"></i></a></li><li><a href="//reddit.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on Reddit"><i class="fab fa-reddit"></i></a></li><li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a></li><li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;title=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on StumbleUpon"><i class="fab fa-stumbleupon"></i></a></li><li><a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fsoab.github.io%2fposts%2f2025-04-19%2f&amp;description=Code%20-%20ECS%20%3f%20Particles%20%2b%20arena%20%2b%20Quad%20Tree" target=_blank title="Share on Pinterest"><i class="fab fa-pinterest"></i></a></li></ul></div></div></section><h4 class=see-also>See also</h4><ul><li><a href=/posts/2025-04-15/>Code - Game Practicum 01</a></li><li><a href=/posts/2025-03-31/>Code -- Simple POKER Game</a></li><li><a href=/posts/2025-03-12/>Code - Lazy Graphics</a></li><li><a href=/posts/2025-02-23/>Code - Pong Game</a></li><li><a href=/posts/2025-01-24/>Code - Line effect</a></li></ul></article><ul class="pager blog-pager"><li class=previous><a href=https://soab.github.io/posts/2025-04-15/ data-toggle=tooltip data-placement=top title="Code - Game Practicum 01">&larr; Previous Post</a></li><li class=next><a href=https://soab.github.io/posts/2026-01-13/ data-toggle=tooltip data-placement=top title="Code - Mine Sweeper">Next Post &rarr;</a></li></ul></div></div></div><footer><div class=container><div class=row><div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><ul class="list-inline text-center footer-links"></ul><p class="credits copyright text-muted">&nbsp;&bull;&nbsp;&copy;
+2026
 &nbsp;&bull;&nbsp;
-<a href=https://soab.github.io/>SoaB</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.146.5</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js integrity=sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script><script src=https://code.jquery.com/jquery-3.7.0.slim.min.js integrity=sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js integrity=sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd crossorigin=anonymous></script><script src=https://soab.github.io/js/main.js></script><script src=https://soab.github.io/js/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script><script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://soab.github.io/js/load-photoswipe.js></script></body></html>
+<a href=https://soab.github.io/>SoaB</a></p><p class="credits theme-by text-muted"><a href=https://gohugo.io>Hugo v0.154.5</a> powered &nbsp;&bull;&nbsp; Theme <a href=https://github.com/halogenica/beautifulhugo>Beautiful Hugo</a> adapted from <a href=https://deanattali.com/beautiful-jekyll/>Beautiful Jekyll</a></p></div></div></div></footer><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js integrity=sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t crossorigin=anonymous></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js integrity=sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05 crossorigin=anonymous onload=renderMathInElement(document.body)></script><script src=https://code.jquery.com/jquery-3.7.0.slim.min.js integrity=sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js integrity=sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd crossorigin=anonymous></script><script src=https://soab.github.io/js/main.js></script><script src=https://soab.github.io/js/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script><script>$(document).ready(function(){$("pre.chroma").css("padding","0")})</script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js integrity=sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy crossorigin=anonymous></script><script src=https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js integrity=sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q crossorigin=anonymous></script><script src=https://soab.github.io/js/load-photoswipe.js></script></body></html>

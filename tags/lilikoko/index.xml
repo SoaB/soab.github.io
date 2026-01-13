@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lilikoko on SoaB</title><link>https://soab.github.io/tags/lilikoko/</link><description>Recent content in Lilikoko on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Sun, 30 Mar 2025 12:49:58 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/lilikoko/index.xml" rel="self" type="application/rss+xml"/><item><title>Poker game from GEMINI</title><link>https://soab.github.io/posts/2025-03-30/</link><pubDate>Sun, 30 Mar 2025 12:49:58 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-30/</guid><description>&lt;h1 id="撲克牌遊戲中各種牌型的自然機率分析報告">撲克牌遊戲中各種牌型的自然機率分析報告&lt;/h1>
-&lt;p>&lt;strong>1. 前言&lt;/strong>&lt;/p>
-&lt;p>撲克牌遊戲，尤其是五張換手撲克，在全球廣受歡迎。了解遊戲中各種牌型出現的機率對於玩家制定策略至關重要。本報告旨在透過組合數學的方法，計算在一副標準的 52 張撲克牌中，隨機抽取 5 張牌時，形成各種特定牌型的自然機率，這些牌型已由使用者提供的 &lt;code>CardWinKind&lt;/code> 陣列定義。本分析將基於標準的組合學原理，計算每種牌型的組合數量，並將其除以所有可能的五張牌組合總數，從而得出其發生的機率。本報告將詳細闡述每種牌型的計算過程，並總結其機率分佈。&lt;/p></description></item><item><title>Lilikoko - Gemini o_O</title><link>https://soab.github.io/posts/2025-02-08/</link><pubDate>Sat, 08 Feb 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-08/</guid><description>&lt;p>** Gemini 2.0 Flash Thinking Experimental&lt;/p>
-&lt;p>Q:&lt;/p>
-&lt;ul>
-&lt;li>1 = 5 2= 10 3 = 15 4 = 20 那麼5 = ?&lt;/li>
-&lt;/ul>
-&lt;p>顯示思路
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lilikoko on SoaB</title><link>https://soab.github.io/tags/lilikoko/</link><description>Recent content in Lilikoko on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Sun, 30 Mar 2025 12:49:58 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/lilikoko/index.xml" rel="self" type="application/rss+xml"/><item><title>Poker game from GEMINI</title><link>https://soab.github.io/posts/2025-03-30/</link><pubDate>Sun, 30 Mar 2025 12:49:58 +0800</pubDate><guid>https://soab.github.io/posts/2025-03-30/</guid><description>&lt;h1 id="撲克牌遊戲中各種牌型的自然機率分析報告"&gt;撲克牌遊戲中各種牌型的自然機率分析報告&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;1. 前言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;撲克牌遊戲，尤其是五張換手撲克，在全球廣受歡迎。了解遊戲中各種牌型出現的機率對於玩家制定策略至關重要。本報告旨在透過組合數學的方法，計算在一副標準的 52 張撲克牌中，隨機抽取 5 張牌時，形成各種特定牌型的自然機率，這些牌型已由使用者提供的 &lt;code&gt;CardWinKind&lt;/code&gt; 陣列定義。本分析將基於標準的組合學原理，計算每種牌型的組合數量，並將其除以所有可能的五張牌組合總數，從而得出其發生的機率。本報告將詳細闡述每種牌型的計算過程，並總結其機率分佈。&lt;/p&gt;</description></item><item><title>Lilikoko - Gemini o_O</title><link>https://soab.github.io/posts/2025-02-08/</link><pubDate>Sat, 08 Feb 2025 12:45:19 +0800</pubDate><guid>https://soab.github.io/posts/2025-02-08/</guid><description>&lt;p&gt;** Gemini 2.0 Flash Thinking Experimental&lt;/p&gt;
+&lt;p&gt;Q:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 = 5 2= 10 3 = 15 4 = 20 那麼5 = ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;顯示思路
 The user is presenting a sequence of numbers on the left side of the equation and their corresponding values on the right side.
 The sequence is:
 1 = 5
 2 = 10
 3 = 15
 4 = 20
-The user is asking to determine the value for 5 = ?.&lt;/p></description></item><item><title>Casino - Gamblers</title><link>https://soab.github.io/posts/2022-04-04-casino/</link><pubDate>Mon, 04 Apr 2022 16:41:37 +0800</pubDate><guid>https://soab.github.io/posts/2022-04-04-casino/</guid><description>&lt;p>大多數（如果不是全部的話）賭徒都是迷信的。他們有幸運日，幸運的衣服，幸運的數字，無論什麼 - 總是有一個明顯的原因來贏得或失去。因此，第一張圖表的好成績是因為玩家的幸運T恤（它是藍色，他的幸運顏色），但是當他無意中交叉雙腿時，一切都出了問題。此外，他一定不要忘記明天在進入賭場之前做他的幸運儀式。&lt;/p></description></item><item><title>人生</title><link>https://soab.github.io/posts/2021-11-11/</link><pubDate>Thu, 11 Nov 2021 22:36:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-11/</guid><description>&lt;h3 id="人的一生要死去三次">人的一生，要死去三次。&lt;/h3>
-&lt;ul>
-&lt;li>第一次，當你的心跳停止，呼吸消逝，你在生物學上被宣告了死亡！&lt;/li>
-&lt;/ul></description></item></channel></rss>
+The user is asking to determine the value for 5 = ?.&lt;/p&gt;</description></item><item><title>Casino - Gamblers</title><link>https://soab.github.io/posts/2022-04-04-casino/</link><pubDate>Mon, 04 Apr 2022 16:41:37 +0800</pubDate><guid>https://soab.github.io/posts/2022-04-04-casino/</guid><description>&lt;p&gt;大多數（如果不是全部的話）賭徒都是迷信的。他們有幸運日，幸運的衣服，幸運的數字，無論什麼 - 總是有一個明顯的原因來贏得或失去。因此，第一張圖表的好成績是因為玩家的幸運T恤（它是藍色，他的幸運顏色），但是當他無意中交叉雙腿時，一切都出了問題。此外，他一定不要忘記明天在進入賭場之前做他的幸運儀式。&lt;/p&gt;</description></item><item><title>人生</title><link>https://soab.github.io/posts/2021-11-11/</link><pubDate>Thu, 11 Nov 2021 22:36:52 +0800</pubDate><guid>https://soab.github.io/posts/2021-11-11/</guid><description>&lt;h3 id="人的一生要死去三次"&gt;人的一生，要死去三次。&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一次，當你的心跳停止，呼吸消逝，你在生物學上被宣告了死亡！&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
