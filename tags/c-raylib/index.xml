@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C Raylib on SoaB</title><link>https://soab.github.io/tags/c-raylib/</link><description>Recent content in C Raylib on SoaB</description><generator>Hugo</generator><language>zh_TW</language><lastBuildDate>Tue, 13 Jan 2026 14:21:20 +0800</lastBuildDate><atom:link href="https://soab.github.io/tags/c-raylib/index.xml" rel="self" type="application/rss+xml"/><item><title>Code - Mine Sweeper</title><link>https://soab.github.io/posts/2026-01-13/</link><pubDate>Tue, 13 Jan 2026 14:21:20 +0800</pubDate><guid>https://soab.github.io/posts/2026-01-13/</guid><description>&lt;h1 id="minesweeper-game"&gt;MineSweeper Game&lt;/h1&gt;
-&lt;p&gt;這是一個使用 Raylib 圖形庫開發的經典踩地雷（Minesweeper）遊戲程式。程式以 C 語言撰寫，支援不同的難度等級，並包含音效、圖片資源和自訂字體。
-&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/minesweeper.png" alt="o_O"&gt;&lt;/a&gt;
-&lt;a href="https://codeberg.org/SoaB/MineSweeper.git"&gt;源碼在這裏&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;這是一個使用 Raylib 圖形庫開發的經典踩地雷（Minesweeper）遊戲程式。程式以 C 語言撰寫，支援不同的難度等級，並包含音效、圖片資源和自訂字體。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/SoaB/soab.github.io"&gt;&lt;img src="https://soab.github.io/images/minesweeper.png" alt="o_O"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://codeberg.org/SoaB/MineSweeper.git"&gt;源碼在這裏&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;這個README是由AI依照原始程式產生的，真是方便啊!&amp;mdash; -_- 最討厭寫這些文件了…&lt;/p&gt;</description></item></channel></rss>
